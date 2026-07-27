@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovautos Concepción | Taller Automotriz</title>
+    <meta name="description" content="Taller Automotriz Innovautos en Concepción. Expertos en desabolladura, pintura, mecánica especializada y detailing.">
+    <meta name="theme-color" content="#111111">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        auto: { dark: '#0a0a0a', red: '#E63946', gray: '#1a1a1a', light: '#f4f4f5' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-auto-dark text-gray-200 font-sans antialiased scroll-smooth overflow-x-hidden">
+
+    <!-- HERO SECTION -->
+    <header role="banner" class="relative h-screen flex items-center justify-center text-center bg-black px-4 overflow-hidden border-b-4 border-auto-red">
+        
+        <!-- Fondo (Puedes cambiar el src por un video de autos trabajando) -->
+        <div class="absolute inset-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-30 transition-transform duration-[10000ms] hover:scale-105"></div>
+        
+        <div class="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center mt-20">
+            <h1 class="font-heading font-black text-5xl md:text-7xl lg:text-8xl text-white mb-4 tracking-tighter uppercase animate-fade-in-up" style="animation-delay: 0.1s;">Innovautos</h1>
+            <p class="text-sm sm:text-lg md:text-xl text-auto-red font-bold mb-8 tracking-[0.2em] uppercase animate-fade-in-up" style="animation-delay: 0.3s;">Desabolladura y Pintura • Concepción</p>
+            <a href="#ubicacion" class="inline-block bg-auto-red text-white font-bold py-4 px-8 text-xs sm:text-sm tracking-widest uppercase hover:bg-white hover:text-auto-red transition-all duration-300 ease-out shadow-[0_0_20px_rgba(230,57,70,0.4)] animate-fade-in-up" style="animation-delay: 0.6s;">Visítanos</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- NOSOTROS Y HORARIO -->
+        <section class="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div class="text-center md:text-left">
+                <h2 class="text-3xl sm:text-4xl font-heading font-bold text-white mb-6 uppercase tracking-wide">Calidad y Precisión</h2>
+                <p class="text-base text-gray-400 leading-relaxed mb-4">En <strong class="text-white">Innovautos</strong> nos especializamos en devolverle la estética y funcionalidad a tu vehículo. Utilizamos tecnología de punta y materiales de primera calidad para garantizar resultados impecables en cada trabajo de carrocería, pintura y mecánica.</p>
+                <p class="text-base text-gray-400 leading-relaxed">Tu auto es tu inversión, y nuestro equipo de profesionales está altamente capacitado para cuidarlo al máximo nivel.</p>
+            </div>
+            <div class="bg-auto-gray p-8 sm:p-10 rounded-lg text-center border-t-4 border-auto-red shadow-2xl mx-auto w-full max-w-md md:max-w-none">
+                <h3 class="text-2xl font-heading font-bold text-white mb-6 uppercase">Horario de Atención</h3>
+                <ul class="space-y-4 text-base text-gray-300">
+                    <li class="border-b border-gray-800 pb-4">
+                        <span class="block font-bold text-auto-red uppercase tracking-wider text-sm mb-1">Lunes a Viernes</span>
+                        <span class="text-lg text-white">09:00 - 18:30</span>
+                    </li>
+                    <li class="pt-2">
+                        <span class="block font-bold text-auto-red uppercase tracking-wider text-sm mb-1">Sábado</span>
+                        <span class="text-lg text-white">09:00 - 14:00</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SERVICIOS BASADOS EN LOS FLYERS -->
+        <section class="py-16 sm:py-24 bg-black px-4 sm:px-6 border-y border-gray-900">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl sm:text-5xl font-heading font-black text-center text-white mb-16 uppercase tracking-widest">Nuestros Servicios</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+                    
+                    <!-- Columna 1: Flyer image_92a1d9.png -->
+                    <div class="bg-auto-gray rounded-xl p-6 border border-gray-800 hover:border-auto-red transition-colors duration-300">
+                        <div class="flex items-center gap-4 mb-8 pb-4 border-b border-gray-800">
+                            <i class="fa-solid fa-wrench text-3xl text-auto-red"></i>
+                            <h3 class="text-2xl font-heading font-bold text-white uppercase tracking-wider">Mecánica Integral</h3>
+                        </div>
+                        <div class="space-y-6">
+                            <!-- Servicio 1 -->
+                            <div class="group flex items-start gap-4">
+                                <div class="w-2 h-2 mt-2 bg-auto-red rounded-full group-hover:scale-150 transition-transform"></div>
+                                <div>
+                                    <h4 class="text-lg text-white font-bold uppercase tracking-wide group-hover:text-auto-red transition-colors">Diagnóstico</h4>
+                                    <p class="text-sm text-gray-500 mt-1">Escáner automotriz y revisión completa del estado de tu vehículo.</p>
+                                </div>
+                            </div>
+                            <!-- Servicio 2 -->
+                            <div class="group flex items-start gap-4">
+                                <div class="w-2 h-2 mt-2 bg-auto-red rounded-full group-hover:scale-150 transition-transform"></div>
+                                <div>
+                                    <h4 class="text-lg text-white font-bold uppercase tracking-wide group-hover:text-auto-red transition-colors">Mecánica Especializada</h4>
+                                    <p class="text-sm text-gray-500 mt-1">Reparaciones de motor, frenos, tren delantero y sistemas complejos.</p>
+                                </div>
+                            </div>
+                            <!-- Servicio 3 -->
+                            <div class="group flex items-start gap-4">
+                                <div class="w-2 h-2 mt-2 bg-auto-red rounded-full group-hover:scale-150 transition-transform"></div>
+                                <div>
+                                    <h4 class="text-lg text-white font-bold uppercase tracking-wide group-hover:text-auto-red transition-colors">Mantención por Kilometraje</h4>
+                                    <p class="text-sm text-gray-500 mt-1">Pautas de mantenimiento preventivo según fabricante.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Referencia visual al flyer -->
+                        <div class="mt-8 rounded-lg overflow-hidden border border-gray-700">
+                            <img src="image_92a1d9.png" alt="Servicios de Mecánica" class="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: Flyer image_92a1d1.png -->
+                    <div class="bg-auto-gray rounded-xl p-6 border border-gray-800 hover:border-auto-red transition-colors duration-300">
+                        <div class="flex items-center gap-4 mb-8 pb-4 border-b border-gray-800">
+                            <i class="fa-solid fa-spray-can text-3xl text-auto-red"></i>
+                            <h3 class="text-2xl font-heading font-bold text-white uppercase tracking-wider">Estética y Carrocería</h3>
+                        </div>
+                        <div class="space-y-6">
+                            <!-- Servicio 4 -->
+                            <div class="group flex items-start gap-4">
+                                <div class="w-2 h-2 mt-2 bg-auto-red rounded-full group-hover:scale-150 transition-transform"></div>
+                                <div>
+                                    <h4 class="text-lg text-white font-bold uppercase tracking-wide group-hover:text-auto-red transition-colors">Desabolladura y Pintura</h4>
+                                    <p class="text-sm text-gray-500 mt-1">Reparación de colisiones, cuadratura y pintura al horno con igualación de color.</p>
+                                </div>
+                            </div>
+                            <!-- Servicio 5 -->
+                            <div class="group flex items-start gap-4">
+                                <div class="w-2 h-2 mt-2 bg-auto-red rounded-full group-hover:scale-150 transition-transform"></div>
+                                <div>
+                                    <h4 class="text-lg text-white font-bold uppercase tracking-wide group-hover:text-auto-red transition-colors">Parabrisas</h4>
+                                    <p class="text-sm text-gray-500 mt-1">Venta, instalación y reparación de cristales automotrices.</p>
+                                </div>
+                            </div>
+                            <!-- Servicio 6 -->
+                            <div class="group flex items-start gap-4">
+                                <div class="w-2 h-2 mt-2 bg-auto-red rounded-full group-hover:scale-150 transition-transform"></div>
+                                <div>
+                                    <h4 class="text-lg text-white font-bold uppercase tracking-wide group-hover:text-auto-red transition-colors">Detailing 360°</h4>
+                                    <p class="text-sm text-gray-500 mt-1">Limpieza profunda, pulido, sellado cerámico y estética interior/exterior.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Referencia visual al flyer -->
+                        <div class="mt-8 rounded-lg overflow-hidden border border-gray-700">
+                            <img src="image_92a1d1.png" alt="Servicios de Carrocería" class="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- UBICACIÓN -->
+        <section id="ubicacion" class="py-16 sm:py-24 bg-auto-dark px-4 sm:px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-1 text-center lg:text-left bg-black p-8 rounded-lg border border-gray-800">
+                    <h2 class="text-3xl font-heading font-black text-white mb-2 uppercase">Nuestra Casa</h2>
+                    <div class="w-12 h-1 bg-auto-red mx-auto lg:mx-0 mb-6"></div>
+                    <p class="text-white font-bold mb-2 text-xl"><i class="fa-solid fa-location-dot text-auto-red mr-2"></i> Ongolmo 716</p>
+                    <p class="text-gray-400 text-base mb-6">Concepción, Región del Biobío</p>
+                    <a href="https://maps.google.com/?q=Ongolmo+716,+Concepción" target="_blank" class="inline-block w-full bg-transparent border-2 border-auto-red text-auto-red font-bold py-3 px-6 text-sm tracking-widest uppercase hover:bg-auto-red hover:text-white transition-all duration-300">
+                        Abrir en Waze / Maps
+                    </a>
+                </div>
+                
+                <!-- Mapa embebido actualizado a Ongolmo 716 -->
+                <div class="lg:col-span-2 w-full h-[400px] bg-auto-gray p-2 border border-gray-800 rounded-lg shadow-2xl">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.522964177432!2d-73.0487042!3d-36.8273617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669b5cfaee313cb%3A0xc6fb698295b9c1d!2sOngolmo%20716%2C%20Concepci%C3%B3n%2C%20B%C3%ADo%20B%C3%ADo!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl" 
+                        title="Mapa Innovautos Concepción" 
+                        class="w-full h-full border-0 rounded-md opacity-80 hover:opacity-100 transition-opacity grayscale hover:grayscale-0" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 sm:py-16 border-t border-auto-red">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
+            <div class="space-y-3">
+                <h3 class="font-heading font-black text-3xl text-white uppercase tracking-tighter">Innovautos</h3>
+                <p class="text-gray-500 text-sm max-w-xs mx-auto md:mx-0">Tu taller automotriz de confianza especializado en desabolladura, pintura y mecánica integral.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm border-b border-gray-800 pb-2 inline-block">Contacto</h4>
+                <address class="text-gray-400 text-sm space-y-3 not-italic">
+                    <p class="flex items-center justify-center md:justify-start gap-3">
+                        <i class="fa-solid fa-map-pin text-auto-red"></i> 
+                        Ongolmo 716, Concepción <!--[cite: 1] -->
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start gap-3">
+                        <i class="fa-solid fa-phone text-auto-red"></i> 
+                        <a href="tel:+56900000000" class="hover:text-white transition-colors">+56 9 0000 0000</a>
+                    </p>
+                    <p class="flex items-center justify-center md:justify-start gap-3">
+                        <i class="fa-solid fa-envelope text-auto-red"></i> 
+                        <a href="mailto:contacto@innovautos.cl" class="hover:text-white transition-colors">contacto@innovautos.cl</a>
+                    </p>
+                </address>
+            </div>
+            
+            <div class="space-y-4">
+                <h4 class="text-white font-bold uppercase tracking-widest text-sm border-b border-gray-800 pb-2 inline-block">Síguenos</h4>
+                <div class="flex justify-center md:justify-start gap-6 pt-2">
+                    <a href="https://www.instagram.com/innovautos_concepcion" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-auto-gray flex items-center justify-center border border-gray-700 group-hover:border-auto-red group-hover:bg-auto-red transition-all duration-300">
+                            <i class="fa-brands fa-instagram text-2xl text-white"></i>
+                        </div>
+                        <span class="block text-[11px] text-gray-500 group-hover:text-white transition duration-300 mt-2 uppercase tracking-widest font-semibold">@innovautos <!--[cite: 1] --></span>
+                    </a>
+                    <a href="https://wa.me/56900000000" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full bg-auto-gray flex items-center justify-center border border-gray-700 group-hover:border-[#25D366] group-hover:bg-[#25D366] transition-all duration-300">
+                            <i class="fa-brands fa-whatsapp text-2xl text-white"></i>
+                        </div>
+                        <span class="block text-[11px] text-gray-500 group-hover:text-white transition duration-300 mt-2 uppercase tracking-widest font-semibold">WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-900 text-center">
+            <p class="text-xs text-gray-600">&copy; 2026 Innovautos Concepción. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
