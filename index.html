@@ -1,174 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Innovautos Concepción | Taller Automotriz — Desabolladura, Pintura y Mecánica</title>
-<meta name="description" content="Taller Automotriz Innovautos en Concepción. Desabolladura y pintura al horno, mecánica especializada, diagnóstico computarizado y detailing. Ongolmo 716, Concepción.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>HIPSO_TATTOO | Estudio de Tatuajes — Concepción Centro</title>
+    <meta name="description" content="Estudio de tatuajes y arte corporal en el centro de Concepción. Tucapel 391 Oficina A. Agenda tu hora online.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Mantenemos tus tipografías: Metal Mania para el estilo Tattoo, Inter/Grotesk para la lectura -->
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Oswald:wght@600;700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Visor 3D PBR -->
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        :root {
+            --ink: #070709;
+            --panel: rgba(18, 18, 22, 0.75);
+            --panel-hover: rgba(28, 28, 33, 0.9);
+            --line: #26262e;
+            --line-light: rgba(255, 255, 255, 0.12);
+            --steel: #9ca3af;
+            --steel-dim: #6b7280;
+            --paper: #f3f4f6;
+            --paper-dim: #d1d5db;
+            --red: #dc2626;
+            --red-glow: rgba(220, 38, 38, 0.35);
+        }
 
-<style>
-  :root {
-    --ink: #070709;
-    --panel: rgba(18, 18, 22, 0.75);
-    --panel-hover: rgba(28, 28, 33, 0.9);
-    --line: #222226;
-    --line-light: rgba(255, 255, 255, 0.12);
-    --steel: #9ca3af;
-    --steel-dim: #6b7280;
-    --paper: #f3f4f6;
-    --paper-dim: #d1d5db;
-    --red: #E63946;
-    --red-glow: rgba(230, 57, 70, 0.35);
-  }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            background: var(--ink);
+            color: var(--paper);
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
 
-  body {
-    margin: 0;
-    background: var(--ink);
-    color: var(--paper);
-    font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
+        ::selection { background: var(--red); color: #fff; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--ink); }
+        ::-webkit-scrollbar-thumb { background: var(--line-light); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--red); }
 
-  ::selection { background: var(--red); color: #fff; }
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: var(--ink); }
-  ::-webkit-scrollbar-thumb { background: var(--line-light); border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--red); }
+        .font-metal { font-family: 'Metal Mania', serif; }
+        .font-rock { font-family: 'Oswald', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
 
-  .font-display { font-family: 'Inter', sans-serif; }
-  .font-mono { font-family: 'JetBrains Mono', monospace; }
+        a { color: inherit; text-decoration: none; }
 
-  a { color: inherit; text-decoration: none; }
+        /* Blueprint Grid adaptado a estilo oscuro/Tattoo */
+        .blueprint { position: relative; }
+        .blueprint::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.05) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.05) 100%);
+        }
 
-  /* Blueprint Grid */
-  .blueprint { position: relative; }
-  .blueprint::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
-    background-size: 40px 40px;
-    z-index: -1;
-    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.05) 100%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.05) 100%);
-  }
+        /* Navbar estilo Innovautos */
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 60; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 20px 0; background: transparent; }
+        .navbar.scrolled { background: rgba(7, 7, 9, 0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); padding: 12px 0; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6); }
+        .navlink { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--steel); transition: color 0.3s; }
+        .navlink:hover { color: #fff; }
 
-  /* Navbar */
-  .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 60; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 20px 0; background: transparent; }
-  .navbar.scrolled { background: rgba(7, 7, 9, 0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); padding: 12px 0; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6); }
-  .navlink { font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--steel); transition: color 0.3s; }
-  .navlink:hover { color: #fff; }
+        /* Buttons estilo Innovautos (Adaptados a Hipso) */
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 13px; padding: 14px 28px; transition: all 0.3s ease; cursor: pointer; white-space: nowrap; border-radius: 4px; z-index: 20; position: relative; }
+        .btn-solid { background: var(--red); color: #fff; border: 1px solid var(--red); box-shadow: 4px 4px 0px rgba(220, 38, 38, 0.5); }
+        .btn-solid:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px rgba(220, 38, 38, 0.8); }
+        .btn-ghost { background: rgba(18, 18, 22, 0.85); border: 1px solid var(--line-light); color: var(--paper); backdrop-filter: blur(10px); }
+        .btn-ghost:hover { border-color: var(--steel); background: rgba(255,255,255,0.12); }
 
-  /* Buttons */
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 13px; padding: 14px 28px; transition: all 0.3s ease; cursor: pointer; white-space: nowrap; border-radius: 6px; z-index: 20; position: relative; }
-  .btn-solid { background: linear-gradient(90deg, #ff512f, #dd2476); color: #fff; box-shadow: 0 4px 15px rgba(221, 36, 118, 0.3); border: none; }
-  .btn-solid:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(221, 36, 118, 0.5); }
-  .btn-ghost { background: rgba(18, 18, 22, 0.85); border: 1px solid var(--line-light); color: var(--paper); backdrop-filter: blur(10px); }
-  .btn-ghost:hover { border-color: var(--steel); background: rgba(255,255,255,0.12); }
+        /* Mobile menu */
+        .hamburger { width: 30px; height: 20px; position: relative; cursor: pointer; z-index: 70; }
+        .hamburger span { position: absolute; left: 0; width: 100%; height: 2px; background: var(--paper); transition: all 0.3s ease; }
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 9px; }
+        .hamburger span:nth-child(3) { top: 18px; }
+        .hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); background: var(--red); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background: var(--red); }
+        
+        .mobile-menu { position: fixed; inset: 0; background: rgba(7, 7, 9, 0.98); backdrop-filter: blur(25px); z-index: 55; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+        .mobile-menu.open { opacity: 1; pointer-events: auto; }
+        .mobile-menu a { font-family: 'Metal Mania', serif; font-size: 40px; letter-spacing: 0.05em; color: var(--paper); transition: color 0.3s; }
+        .mobile-menu a:hover { color: var(--red); }
 
-  /* Mobile menu */
-  .hamburger { width: 30px; height: 20px; position: relative; cursor: pointer; z-index: 70; }
-  .hamburger span { position: absolute; left: 0; width: 100%; height: 2px; background: var(--paper); transition: all 0.3s ease; }
-  .hamburger span:nth-child(1) { top: 0; }
-  .hamburger span:nth-child(2) { top: 9px; }
-  .hamburger span:nth-child(3) { top: 18px; }
-  .hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); background: var(--red); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background: var(--red); }
-  .mobile-menu { position: fixed; inset: 0; background: rgba(7, 7, 9, 0.98); backdrop-filter: blur(25px); z-index: 55; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
-  .mobile-menu.open { opacity: 1; pointer-events: auto; }
-  .mobile-menu a { font-family: 'Bebas Neue', sans-serif; font-size: 40px; letter-spacing: 0.05em; color: var(--paper); transition: color 0.3s; }
-  .mobile-menu a:hover { color: var(--red); }
+        /* Animations (Scroll Reveal) */
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.in { opacity: 1; transform: translateY(0); }
+        .reveal-d1 { transition-delay: 0.1s; }
+        .reveal-d2 { transition-delay: 0.2s; }
 
-  /* Animations */
-  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-  .reveal.in { opacity: 1; transform: translateY(0); }
-  .reveal-d1 { transition-delay: 0.1s; }
-  .reveal-d2 { transition-delay: 0.2s; }
+        /* Utilities */
+        .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
+        .eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--red); box-shadow: 0 0 5px var(--red); }
 
-  /* Utilities */
-  .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red); }
-  .eyebrow::before { content: ""; width: 30px; height: 2px; background: var(--red); box-shadow: 0 0 5px var(--red); }
+        /* Estilos hero top bar */
+        .hero-stat-item { border-bottom: 1px solid rgba(255, 255, 255, 0.15); padding-bottom: 10px; }
 
-  /* FAB Whatsapp */
-  .fab-wsp { position: fixed; bottom: 24px; right: 24px; z-index: 50; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-  .fab-wsp:hover { transform: scale(1.1) rotate(5deg); }
-  .fab-wsp i { color: #fff; font-size: 30px; }
+        /* --- VIBRACIÓN DE LOGOS (Tiritado máquina tatuar) --- */
+        @keyframes slowVibrate {
+            0%, 25%, 100% { transform: translate(0, 0) rotate(0deg); }
+            3% { transform: translate(-2px, -1px) rotate(-1deg); }
+            6% { transform: translate(2px, 2px) rotate(1.5deg); }
+            9% { transform: translate(-2px, 1px) rotate(-1deg); }
+            12% { transform: translate(2px, -2px) rotate(1deg); }
+            15% { transform: translate(-1px, 2px) rotate(-1.5deg); }
+            18% { transform: translate(2px, -1px) rotate(1deg); }
+            21% { transform: translate(-1px, -1px) rotate(-0.5deg); }
+        }
+        .vibrate-seq { display: inline-block; animation: slowVibrate 6s ease-in-out infinite; }
+        .vibrate-delay-1 { animation-delay: 0s; }
+        .vibrate-delay-2 { animation-delay: 2s; }
+        .vibrate-delay-3 { animation-delay: 4s; }
 
-  /* Video Background Hero */
-  .hero-video-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-  }
+        /* Acordeón Innovautos Style */
+        .faq-content { transition: max-height 0.3s ease-out; }
+    </style>
 
-  /* Estilos específicos para la barra superior tipo Lyon Service */
-  .hero-stat-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-    padding-bottom: 8px;
-  }
+    <!-- Cal.com Embed Script -->
+    <script type="text/javascript">
+      (function (C, A, L) {
+        let p = function (a, ar) { a.q.push(ar); };
+        let d = C.document;
+        C.Cal = C.Cal || function () {
+          let cal = C.Cal;
+          let ar = arguments;
+          if (!cal.q) { cal.q = []; }
+          if (ar[0] === "init") {
+            let api = function () { p(api, arguments); };
+            let c = ar[1];
+            api.ns = {};
+            if (c) { cal.ns[c] = cal.ns[c] || api; }
+            return api;
+          }
+          p(cal, ar);
+        };
+      })(window, "https://app.cal.com/embed/embed.js", "Cal");
 
-  /* 3D Model Viewer */
-  model-viewer#carModel { width: 100%; height: 380px; background-color: transparent; --poster-color: transparent; cursor: grab; border: 1px solid var(--line); border-radius: 12px; }
-  @media (min-width: 768px) { model-viewer#carModel { height: 480px; } }
-  model-viewer#carModel:active { cursor: grabbing; }
-
-  /* Selectores 3D */
-  .car-select-btn { display: flex; align-items: center; gap: 8px; background: rgba(20, 20, 25, 0.8); border: 1px solid var(--line); padding: 10px 18px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--paper-dim); transition: all 0.3s ease; cursor: pointer; }
-  .car-select-btn:hover { border-color: var(--steel); color: #fff; }
-  .car-select-btn.active { border-color: var(--red); background: rgba(230, 57, 70, 0.15); color: #fff; box-shadow: 0 0 12px var(--red-glow); }
-
-  .color-swatch-pro { display: flex; align-items: center; gap: 10px; background: rgba(15, 15, 18, 0.8); border: 1px solid var(--line); padding: 10px 18px; border-radius: 8px; transition: all 0.3s ease; cursor: pointer; }
-  .color-swatch-pro:hover { border-color: var(--steel); background: rgba(25, 25, 30, 0.9); }
-  .color-swatch-pro.active { border-color: var(--red); box-shadow: 0 0 15px rgba(230,57,70,0.3); background: rgba(230,57,70,0.1); }
-  .color-pill { width: 20px; height: 20px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); box-shadow: inset 0 2px 4px rgba(0,0,0,0.5); flex-shrink: 0; }
-
-  .custom-input { width: 100%; background: #0c0c0f; border: 1px solid var(--line-light); padding: 14px 16px; border-radius: 6px; color: var(--paper); font-size: 14px; transition: border-color 0.3s ease; }
-  .custom-input:focus { outline: none; border-color: var(--red); }
-
-  /* Map Container */
-  .map-wrapper { width: 100%; height: 100%; min-height: 450px; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--line-light); }
-  .map-wrapper iframe { width: 100% !important; height: 100% !important; min-height: 450px; border: 0; }
-</style>
+      Cal("init", "evaluacion", {origin:"https://cal.com"});
+      Cal.ns.evaluacion("ui", {"theme":"dark", "styles":{"body":{"background":"#0d0d0f"}}, "hideEventTypeDetails":false, "layout":"month_view"});
+    </script>
 </head>
 
 <body class="blueprint">
 
-<!-- NAVBAR -->
+<!-- NAVBAR (ESTILO INNOVAUTOS) -->
 <nav id="navbar" class="navbar">
   <div class="max-w-7xl mx-auto px-6 flex justify-between items-center w-full">
     <a href="#" class="flex items-center gap-4 group" style="min-width:0;">
-      <div class="w-10 h-10 overflow-hidden rounded border border-line-light group-hover:border-red transition-colors shadow-lg">
-        <img src="assets/imagen1.jpg" alt="Innovautos Concepción" class="w-full h-full object-cover">
+      <div class="w-10 h-10 overflow-hidden rounded-full border border-line-light group-hover:border-red transition-colors shadow-lg flex items-center justify-center bg-black">
+        <img src="./assets/imagen1.jpg" alt="HIPSO TATTOO Logo" class="w-full h-full object-cover">
       </div>
-      <span class="font-display uppercase text-2xl tracking-wider group-hover:text-red transition-colors font-bold" style="font-family:'Bebas Neue', sans-serif;">Innovautos</span>
+      <span class="font-metal text-2xl sm:text-3xl tracking-wider text-white group-hover:text-red transition-colors">
+        HIPSO<span class="text-red">_TATTOO</span>
+      </span>
     </a>
 
     <div class="hidden md:flex items-center gap-8">
-      <a href="#servicios" class="navlink">Servicios</a>
-      <a href="#configurador3d" class="navlink">Estudio 3D</a>
-      <a href="#promociones" class="navlink">Promociones</a>
-      <a href="#faq" class="navlink">FAQ</a>
-      <a href="#contacto" class="btn btn-solid !py-2 !px-6 !text-xs">
-        <i class="fa-brands fa-whatsapp text-lg"></i> Agendar
+      <a href="#estudio" class="navlink">// EL ESTUDIO</a>
+      <a href="#preparacion" class="navlink">// PREPARACIÓN</a>
+      <a href="#disciplinas" class="navlink">// TÉCNICAS</a>
+      <a href="#artista" class="navlink">// EL ARTISTA</a>
+      <a href="#ubicacion" class="navlink">// UBICACIÓN</a>
+      <a href="#agendar" class="btn btn-solid !py-2 !px-6 !text-xs bg-white text-black !shadow-none hover:bg-red hover:text-white border-0">
+        RESERVAR CITA
       </a>
     </div>
 
@@ -180,66 +188,69 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#servicios">Servicios</a>
-  <a href="#configurador3d">Estudio 3D</a>
-  <a href="#promociones">Promociones</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contacto" class="btn btn-solid mt-4">
-    <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+  <a href="#estudio">EL ESTUDIO</a>
+  <a href="#preparacion">PREPARACIÓN</a>
+  <a href="#disciplinas">TÉCNICAS</a>
+  <a href="#artista">EL ARTISTA</a>
+  <a href="#ubicacion">UBICACIÓN</a>
+  <a href="#agendar" class="btn btn-solid mt-4">
+    RESERVAR CITA
   </a>
 </div>
 
-<!-- HERO PRINCIPAL CON DATOS REPOSICIONADOS MÁS ARRIBA -->
+<!-- HERO PRINCIPAL (ESTRUCTURA INNOVAUTOS) -->
 <header class="relative min-h-[95svh] flex flex-col justify-start bg-ink overflow-hidden pt-20 pb-16 border-b border-line">
   
-  <!-- Video de fondo -->
-  <video autoplay loop muted playsinline class="hero-video-bg">
-    <source src="assets/video1.mp4" type="video/mp4">
-  </video>
-
-  <!-- Gradiente para lectura limpia -->
-  <div class="absolute inset-0 z-[1] bg-gradient-to-r from-black/95 via-black/80 to-black/40"></div>
+  <div class="absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1920&q=80" 
+         alt="Tattoo Studio Background" 
+         class="w-full h-full object-cover filter brightness-[0.25] contrast-125">
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent"></div>
+  </div>
 
   <div class="max-w-7xl mx-auto px-6 w-full relative z-10 pt-10">
     
-    <!-- Banner de Datos Superiores: Posicionado justo arriba con mayor espacio vertical hacia el título -->
+    <!-- Banner de Datos Superiores -->
     <div class="reveal mb-20 md:mb-24">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 max-w-5xl font-mono">
         <div class="hero-stat-item">
-          <p class="text-steel uppercase tracking-widest text-[10px] mb-1 font-semibold">ESPECIALIDAD</p>
-          <p class="text-white font-bold tracking-widest text-xs md:text-sm">TALLER MULTIMARCA</p>
+          <p class="text-steel uppercase tracking-widest text-[10px] mb-1 font-semibold">UBICACIÓN</p>
+          <p class="text-white font-bold tracking-widest text-xs md:text-sm">TUCAPEL 391 OF. A</p>
         </div>
         <div class="hero-stat-item">
           <p class="text-steel uppercase tracking-widest text-[10px] mb-1 font-semibold">DISPONIBILIDAD</p>
           <p class="text-emerald-400 font-bold tracking-widest text-xs md:text-sm">AGENDA ABIERTA</p>
         </div>
         <div class="hero-stat-item">
-          <p class="text-steel uppercase tracking-widest text-[10px] mb-1 font-semibold">EXPERIENCIA</p>
-          <p class="text-white font-bold tracking-widest text-xs md:text-sm">10+ AÑOS DE ÉXITO</p>
+          <p class="text-steel uppercase tracking-widest text-[10px] mb-1 font-semibold">ESPECIALIDAD</p>
+          <p class="text-white font-bold tracking-widest text-xs md:text-sm">DISEÑOS DE AUTOR</p>
         </div>
         <div class="hero-stat-item">
-          <p class="text-steel uppercase tracking-widest text-[10px] mb-1 font-semibold">UBICACIÓN</p>
-          <p class="text-white font-bold tracking-widest text-xs md:text-sm">ONGOLMO 716, CONCEPCIÓN</p>
+          <p class="text-steel uppercase tracking-widest text-[10px] mb-1 font-semibold">HIGIENE</p>
+          <p class="text-white font-bold tracking-widest text-xs md:text-sm">NIVEL PROFESIONAL</p>
         </div>
       </div>
     </div>
 
-    <!-- Contenido Principal -->
+    <!-- Contenido Principal Hero -->
     <div class="max-w-3xl reveal reveal-d1">
-      <h1 class="font-display text-5xl sm:text-6xl md:text-[5.5rem] text-white leading-[1.02] tracking-tight mb-6 font-extrabold drop-shadow-2xl">
-        Taller <span class="font-light italic text-paper-dim" style="font-family: serif;">Innovautos</span><br>
-        Siempre Confiable
+      
+      <h1 class="font-metal text-6xl sm:text-7xl md:text-[6.5rem] text-white leading-none tracking-wide uppercase drop-shadow-2xl mb-4">
+        HIPSO<span class="text-red">_TATTOO</span>
       </h1>
+      <p class="font-rock text-xl sm:text-2xl md:text-3xl text-gray-200 tracking-widest uppercase mb-4">
+        ARTE EN PIEL CON ACTITUD Y PRECISIÓN
+      </p>
       <p class="text-paper-dim font-medium text-sm md:text-base leading-relaxed mb-8 max-w-xl drop-shadow-lg">
-        Servicio técnico multimarca experto en Concepción. Diagnóstico de alta precisión con escáner oficial, mantenciones preventivas y reparación certificada con repuestos de calidad.
+        Estudio privado enfocado en proyectos de autor. Diseños personalizados con estándares higiénicos de nivel profesional y atención individual en el centro de Concepción.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4">
-        <a href="#contacto" class="btn btn-solid">
-          <i class="fa-brands fa-whatsapp text-lg"></i> AGENDAR POR WHATSAPP
+        <a href="#agendar" class="btn btn-solid">
+          AGENDAR EVALUACIÓN DIRECTA
         </a>
-        <a href="#servicios" class="btn btn-ghost">
-          VER ESPECIALIDADES ↓
+        <a href="#ubicacion" class="btn btn-ghost">
+          VER UBICACIÓN ↓
         </a>
       </div>
     </div>
@@ -249,90 +260,100 @@
 
 <main>
 
-  <!-- SECCIÓN CONFIANZA -->
-  <section id="confianza" class="relative bg-ink overflow-hidden border-b border-line py-24">
-    <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2000&auto=format&fit=crop" alt="Auto Innovautos" class="w-full h-full object-cover opacity-20 grayscale">
-      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-transparent"></div>
-    </div>
-    
+  <!-- EL ESTUDIO (PILARES CON TIRITADO DE AGUJA) -->
+  <section id="estudio" class="py-24 relative overflow-hidden border-b border-line">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <h2 class="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-white mb-2" style="letter-spacing: 0.02em;">
-          A tu vehículo le falta <br><span class="text-red font-light italic" style="font-family: serif; text-shadow: 0 0 20px var(--red-glow);">INNOVAUTOS</span>
-        </h2>
+        <span class="eyebrow justify-center">Nuestra Filosofía</span>
+        <h2 class="font-metal text-5xl sm:text-6xl text-white mt-4 uppercase tracking-wider">EL ESTUDIO</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal reveal-d1">
-        <div class="bg-ink/80 backdrop-blur-md border border-line-light p-8 rounded-xl shadow-2xl">
-          <p class="text-sm md:text-base text-paper-dim leading-relaxed mb-0 font-medium">
-            En Innovautos conocemos tu vehículo como si fuera nuestro. Diagnóstico honesto, repuestos originales o alternativos de alta calidad y tu auto de vuelta exactamente cuando te dijimos.
-          </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal reveal-d1">
+        
+        <div class="bg-ink/80 backdrop-blur-md border border-line-light p-8 rounded-xl shadow-2xl flex flex-col items-center text-center">
+            <div class="w-20 h-20 mb-6 flex items-center justify-center">
+                <svg class="w-16 h-16 text-white fill-current vibrate-seq vibrate-delay-1" viewBox="0 0 100 100">
+                    <polygon points="50,5 61,35 95,35 68,55 79,88 50,70 21,88 32,55 5,35 39,35" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+                    <circle cx="50" cy="50" r="10" fill="#dc2626"/>
+                    <circle cx="50" cy="50" r="18" stroke="#ffffff" stroke-width="1" stroke-dasharray="2 2" fill="none"/>
+                </svg>
+            </div>
+            <h3 class="font-rock text-xl text-white font-bold mb-3 tracking-wider uppercase">NUESTRO ARTISTA</h3>
+            <p class="text-sm text-paper-dim leading-relaxed font-medium">Especialista en adaptar cada proyecto a la anatomía del cliente con manejo experto de múltiples disciplinas técnicas.</p>
         </div>
-        <div class="bg-ink/80 backdrop-blur-md border border-line-light p-8 rounded-xl shadow-2xl flex items-center">
-          <p class="text-sm md:text-base text-paper-dim leading-relaxed mb-0 font-medium">
-            Llevas tu auto a manos expertas en Concepción. Te explicamos directo y transparente lo que necesita, sin cobrarte de más ni darte vueltas.
-          </p>
+
+        <div class="bg-ink/80 backdrop-blur-md border border-line-light p-8 rounded-xl shadow-2xl flex flex-col items-center text-center">
+            <div class="w-20 h-20 mb-6 flex items-center justify-center">
+                <svg class="w-16 h-16 text-white fill-current vibrate-seq vibrate-delay-2" viewBox="0 0 100 100">
+                    <polygon points="50,10 90,80 10,80" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+                    <polygon points="50,90 90,20 10,20" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+                    <polygon points="50,30 70,65 30,65" fill="#dc2626" opacity="0.8"/>
+                </svg>
+            </div>
+            <h3 class="font-rock text-xl text-white font-bold mb-3 tracking-wider uppercase">DIVERSIDAD</h3>
+            <p class="text-sm text-paper-dim leading-relaxed font-medium">Trabajamos proyectos Fine Line, Blackwork, Neotradicional, Escala de Grises, Geometría y Coberturas personalizadas.</p>
         </div>
+
+        <div class="bg-ink/80 backdrop-blur-md border border-line-light p-8 rounded-xl shadow-2xl flex flex-col items-center text-center">
+            <div class="w-20 h-20 mb-6 flex items-center justify-center">
+                <svg class="w-16 h-16 text-white fill-current vibrate-seq vibrate-delay-3" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="14" fill="#ffffff"/>
+                    <circle cx="50" cy="50" r="6" fill="#0d0d0f"/>
+                    <g stroke="#dc2626" stroke-width="2">
+                        <line x1="50" y1="10" x2="50" y2="25"/>
+                        <line x1="50" y1="75" x2="50" y2="90"/>
+                        <line x1="10" y1="50" x2="25" y2="50"/>
+                        <line x1="75" y1="50" x2="90" y2="50"/>
+                        <line x1="22" y1="22" x2="32" y2="32"/>
+                        <line x1="68" y1="68" x2="78" y2="78"/>
+                        <line x1="22" y1="78" x2="32" y2="68"/>
+                        <line x1="68" y1="32" x2="78" y2="22"/>
+                    </g>
+                </svg>
+            </div>
+            <h3 class="font-rock text-xl text-white font-bold mb-3 tracking-wider uppercase">PASIÓN POR LA TINTA</h3>
+            <p class="text-sm text-paper-dim leading-relaxed font-medium">Atención dedicada con estándares higiénicos de nivel quirúrgico, entregando lo mejor en cada aguja y cada sesión.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- SERVICIOS -->
-  <section id="servicios" class="py-24 relative">
+  <!-- DISCIPLINAS (ESTILOS) -->
+  <section id="disciplinas" class="py-24 relative bg-[rgba(10,10,12,0.8)] border-b border-line">
     <div class="max-w-7xl mx-auto px-6">
       <div class="reveal mb-12 max-w-2xl">
-        <span class="eyebrow">Qué hacemos</span>
-        <h2 class="font-display font-bold uppercase mt-4 text-5xl md:text-6xl">Nuestros servicios</h2>
+        <span class="eyebrow">Disciplinas</span>
+        <h2 class="font-metal uppercase mt-4 text-5xl md:text-6xl text-white tracking-widest">ESTILOS DE TATUAJE</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        <div class="group relative overflow-hidden rounded-2xl md:col-span-2 min-h-[320px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d1">
-          <img src="https://images.unsplash.com/photo-1727893304219-063d142ce6f3?q=80&w=1400&auto=format&fit=crop" alt="Desabolladura y Pintura" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent opacity-90 group-hover:opacity-70 transition-colors duration-500 z-0"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-spray-can-sparkles text-red text-2xl drop-shadow-md"></i>
-              <h3 class="font-display font-bold uppercase text-3xl sm:text-4xl text-white tracking-wider drop-shadow-lg">Desabolladura y pintura</h3>
-            </div>
-            <p class="text-paper text-sm max-w-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 drop-shadow-md font-medium">Reparación de colisiones y pintura al horno con igualación de color original.</p>
+        <div class="group relative overflow-hidden rounded-xl min-h-[250px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d1 bg-panel">
+          <div class="absolute bottom-0 left-0 p-6 w-full z-10">
+            <h3 class="font-rock font-bold uppercase text-2xl text-white tracking-wider mb-2">FINE LINE & MINIMAL</h3>
+            <p class="text-paper-dim text-sm font-medium">Trazos finos de precisión, tipografía sutil y composiciones elegantes.</p>
           </div>
         </div>
 
-        <div class="group relative overflow-hidden rounded-2xl min-h-[320px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d2">
-          <img src="https://images.unsplash.com/photo-1702146715426-2380c6ad54c5?q=80&w=800&auto=format&fit=crop" alt="Diagnóstico Automotriz" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent opacity-90 group-hover:opacity-70 transition-colors duration-500 z-0"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-laptop-code text-red text-2xl drop-shadow-md"></i>
-              <h3 class="font-display font-bold uppercase text-3xl text-white tracking-wider drop-shadow-lg">Diagnóstico</h3>
-            </div>
-            <p class="text-paper text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 drop-shadow-md font-medium">Escáner automotriz avanzado y revisión técnica completa.</p>
+        <div class="group relative overflow-hidden rounded-xl min-h-[250px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d2 bg-panel">
+          <div class="absolute bottom-0 left-0 p-6 w-full z-10">
+            <h3 class="font-rock font-bold uppercase text-2xl text-white tracking-wider mb-2">BLACKWORK & SOMBRAS</h3>
+            <p class="text-paper-dim text-sm font-medium">Alto contraste, sombreado suave escala de grises y bloques de tinta sólida.</p>
           </div>
         </div>
 
-        <div class="group relative overflow-hidden rounded-2xl min-h-[320px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d1">
-          <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=800&auto=format&fit=crop" alt="Mantención" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent opacity-90 group-hover:opacity-70 transition-colors duration-500 z-0"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-oil-can text-red text-2xl drop-shadow-md"></i>
-              <h3 class="font-display font-bold uppercase text-3xl text-white tracking-wider leading-none drop-shadow-lg">Mantenciones</h3>
-            </div>
-            <p class="text-paper text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 drop-shadow-md font-medium">Pautas preventivas strictly según el manual del fabricante.</p>
+        <div class="group relative overflow-hidden rounded-xl min-h-[250px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d1 bg-panel">
+          <div class="absolute bottom-0 left-0 p-6 w-full z-10">
+            <h3 class="font-rock font-bold uppercase text-2xl text-white tracking-wider mb-2">NEOTRADICIONAL</h3>
+            <p class="text-paper-dim text-sm font-medium">Líneas de varios calibres, volumen e ilustración clásica reinventada.</p>
           </div>
         </div>
 
-        <div class="group relative overflow-hidden rounded-2xl md:col-span-2 min-h-[320px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d1">
-          <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=1400&auto=format&fit=crop" alt="Detailing" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent opacity-90 group-hover:opacity-70 transition-colors duration-500 z-0"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-hand-sparkles text-red text-2xl drop-shadow-md"></i>
-              <h3 class="font-display font-bold uppercase text-3xl sm:text-4xl text-white tracking-wider drop-shadow-lg">Detailing Premium</h3>
-            </div>
-            <p class="text-paper text-sm max-w-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 drop-shadow-md font-medium">Limpieza profunda, pulido de corrección y sellado cerámico de alta gama.</p>
+        <div class="group relative overflow-hidden rounded-xl min-h-[250px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d2 bg-panel">
+          <div class="absolute bottom-0 left-0 p-6 w-full z-10">
+            <h3 class="font-rock font-bold uppercase text-2xl text-white tracking-wider mb-2">COVER-UP & REFORMAS</h3>
+            <p class="text-paper-dim text-sm font-medium">Cobertura de tatuajes antiguos y reestructuración gráfica de piezas previas.</p>
           </div>
         </div>
 
@@ -340,172 +361,93 @@
     </div>
   </section>
 
-  <!-- CONFIGURADOR 3D -->
-  <section id="configurador3d" class="py-24 bg-ink border-y border-line relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <div class="reveal mb-8">
-        <span class="eyebrow justify-center">Estudio de Pintura al Horno</span>
-        <h2 class="font-display font-bold uppercase mt-4 text-4xl md:text-6xl">Estudio 3D — Personaliza tu Auto</h2>
-        <p class="text-steel text-sm md:text-base mt-2 max-w-2xl mx-auto">Selecciona el vehículo y prueba nuestros acabados de pintura al horno en tiempo real.</p>
-      </div>
-
-      <div class="reveal mb-6 flex flex-wrap justify-center items-center gap-3 border border-line-light p-3 rounded-xl bg-panel max-w-xl mx-auto">
-        <span class="text-xs font-mono text-steel uppercase tracking-wider mr-2">Modelos:</span>
-        <button class="car-select-btn active" onclick="changeVehicle('assets/subaru.glb', this)">
-          <i class="fa-solid fa-car"></i> Subaru WRX
-        </button>
-        <button class="car-select-btn" onclick="changeVehicle('assets/mercedes1.glb', this)">
-          <i class="fa-solid fa-car-side"></i> Mercedes 1
-        </button>
-        <button class="car-select-btn" onclick="changeVehicle('assets/mercedes2.glb', this)">
-          <i class="fa-solid fa-car-side"></i> Mercedes 2
-        </button>
-      </div>
-
-      <div class="reveal reveal-d1 relative max-w-5xl mx-auto rounded-2xl border border-line-light bg-[rgba(10,10,13,0.85)] p-4 md:p-8 shadow-2xl backdrop-blur-xl">
-        <model-viewer id="carModel"
-                      src="assets/subaru.glb"
-                      environment-image="https://modelviewer.dev/shared-assets/environments/aircraft_workshop_01_1k.hdr"
-                      alt="Configurador 3D Innovautos"
-                      loading="eager"
-                      reveal="auto"
-                      auto-rotate
-                      camera-controls
-                      shadow-intensity="1.5"
-                      shadow-softness="0.5"
-                      exposure="1.2"
-                      camera-orbit="45deg 75deg auto"
-                      field-of-view="30deg"
-                      touch-action="pan-y">
-          <div class="absolute top-4 left-4 bg-ink/90 border border-line-light backdrop-blur-md px-3 py-1.5 rounded text-[11px] font-mono text-red z-30 shadow-lg">
-            ROTA 360° CON MOUSE / DEDO
-          </div>
-        </model-viewer>
-
-        <div class="mt-8 pt-6 border-t border-line">
-          <p class="text-xs font-mono text-steel uppercase tracking-widest mb-4">Selecciona el acabado para la pintura exterior:</p>
-          <div class="flex flex-wrap justify-center items-center gap-4">
-            <button class="color-swatch-pro active" onclick="setCarPaint(this, [0.05, 0.15, 0.5, 1.0], false)">
-              <span class="color-pill" style="background:#1E3A8A;"></span>
-              <span class="text-xs font-mono text-white">Azul Perlado</span>
-            </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.85, 0.05, 0.05, 1.0], false)">
-              <span class="color-pill" style="background:#E63946;"></span>
-              <span class="text-xs font-mono text-white">Rojo Candy</span>
-            </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.75, 0.77, 0.8, 1.0], false)">
-              <span class="color-pill" style="background:#d1d5db;"></span>
-              <span class="text-xs font-mono text-white">Blanco Mineral</span>
-            </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.01, 0.01, 0.01, 1.0], false)">
-              <span class="color-pill" style="background:#111;"></span>
-              <span class="text-xs font-mono text-white">Negro Espejo</span>
-            </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.03, 0.03, 0.03, 1.0], true)">
-              <span class="color-pill" style="background:#18181B; border-style: dashed;"></span>
-              <span class="text-xs font-mono text-white">Negro Mate (Opaco)</span>
-            </button>
-          </div>
+  <!-- EL ARTISTA -->
+  <section id="artista" class="py-24 bg-ink border-b border-line relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden relative reveal reveal-d1 border border-line-light shadow-2xl bg-panel flex flex-col items-center justify-center">
+          <!-- ESPACIO PARA FOTO -->
+          <i class="fa-solid fa-camera text-4xl text-gray-600 mb-3"></i>
+          <span class="text-xs font-mono text-gray-500 uppercase tracking-widest">Espacio para Foto del Artista</span>
         </div>
-      </div>
-      <p class="text-xs text-steel-dim font-mono mt-6">* Simulación con acabado transparente poliuretano y protección cerámica.</p>
-    </div>
-  </section>
 
-  <!-- PROMOCIONES -->
-  <section id="promociones" class="py-24 bg-[rgba(10,10,12,0.8)] border-y border-line relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="reveal mb-16 text-center max-w-3xl mx-auto">
-        <span class="eyebrow justify-center">Precios claros</span>
-        <h2 class="font-display font-bold uppercase mt-4 text-5xl md:text-6xl">Ofertas especiales</h2>
-        <p class="mt-6 text-paper-dim text-lg">Aprovecha nuestras promociones exclusivas diseñadas para mantener tu vehículo en perfectas condiciones al mejor precio.</p>
-      </div>
+        <div class="lg:col-span-7 reveal reveal-d2">
+          <span class="eyebrow mb-2">Residente & Fundador</span>
+          <h2 class="font-metal text-5xl md:text-6xl text-white mt-3 mb-6 uppercase tracking-wider">HIPSO TATTOO</h2>
+          <p class="text-paper-dim text-sm md:text-base leading-relaxed mb-8">
+            Especialista en composiciones de autor, abarcando con precisión técnicas de Blackwork, Fine Line, Neotradicional y proyectos a medida. Atención 100% personalizada en cada proyecto de principio a fin.
+          </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="glass-card reveal reveal-d1 rounded-xl p-8 md:p-10">
-          <i class="fa-solid fa-spray-can absolute -right-6 -top-6 text-[12rem] text-red opacity-10 rotate-12"></i>
-          <span class="code-tag mb-4">PROMO · 01</span>
-          <h3 class="font-display font-bold uppercase text-3xl md:text-4xl mb-1 text-white">Pintado Profesional</h3>
-          <p class="text-xs text-steel uppercase tracking-widest mb-6 relative z-10">En Horno · Color Original · A Puertas Cerradas</p>
-
-          <ul class="space-y-4 relative z-10 font-mono text-sm mb-8">
-            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Hatchback</span><span class="font-bold text-red text-xl">$1.100.000</span></li>
-            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Sedán</span><span class="font-bold text-red text-xl">$1.250.000</span></li>
-            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">SUV</span><span class="font-bold text-red text-xl">$1.350.000</span></li>
-            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Pick Up</span><span class="font-bold text-red text-xl">$1.550.000</span></li>
-          </ul>
-
-          <div class="flex flex-col lg:flex-row gap-3 mb-6 relative z-10">
-            <div class="bg-paper text-ink font-bold text-xs py-2 px-4 rounded text-center whitespace-nowrap">2 AÑOS GARANTÍA</div>
-            <div class="bg-red/10 border border-red text-red font-bold text-xs py-2 px-4 rounded text-center whitespace-nowrap">INCLUYE SELLADO CERÁMICO</div>
+          <div class="flex flex-col sm:flex-row gap-4 font-mono text-xs">
+            <div class="bg-panel border border-line-light px-4 py-3 rounded text-paper flex items-center gap-2">
+                <i class="fa-solid fa-check text-red"></i> ATENCIÓN INDIVIDUAL
+            </div>
+            <div class="bg-panel border border-line-light px-4 py-3 rounded text-paper flex items-center gap-2">
+                <i class="fa-solid fa-check text-red"></i> DISEÑOS CUSTOM
+            </div>
           </div>
         </div>
 
-        <div class="glass-card reveal reveal-d2 rounded-xl p-8 md:p-10">
-          <i class="fa-solid fa-car-burst absolute -right-6 -top-6 text-[12rem] text-red opacity-10 rotate-12"></i>
-          <span class="code-tag mb-4">PROMO · 02</span>
-          <h3 class="font-display font-bold uppercase text-3xl md:text-4xl mb-2 text-white">Revisión mecánica</h3>
-          <div class="flex items-baseline gap-4 mb-8 border-b border-line pb-6">
-            <p class="font-mono font-bold text-5xl text-red">$45.000</p>
-            <p class="text-sm font-mono text-steel-dim line-through decoration-red">Normal: $65.000</p>
-          </div>
-          <p class="font-bold uppercase text-xs tracking-widest mb-5 text-paper">El servicio incluye:</p>
-          <ul class="space-y-4 relative z-10 text-sm">
-            <li class="flex items-center gap-4"><i class="fa-solid fa-check text-red bg-red/10 p-1.5 rounded"></i><span class="text-paper-dim">Informe técnico detallado</span></li>
-            <li class="flex items-center gap-4"><i class="fa-solid fa-check text-red bg-red/10 p-1.5 rounded"></i><span class="text-paper-dim">Presupuesto de reparación exacto</span></li>
-            <li class="flex items-center gap-4"><i class="fa-solid fa-check text-red bg-red/10 p-1.5 rounded"></i><span class="text-paper-dim">Escáner computarizado pre y post reparación</span></li>
-          </ul>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-24 bg-ink border-b border-line relative overflow-hidden">
+  <!-- FAQ / PREPARACIÓN (ESTILO INNOVAUTOS) -->
+  <section id="preparacion" class="py-24 bg-[rgba(10,10,12,0.8)] border-b border-line relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         
-        <div class="w-full h-[400px] lg:h-[550px] rounded-2xl overflow-hidden relative reveal reveal-d1 border border-line-light shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=1000&auto=format&fit=crop" alt="Auto Blanco en Taller" class="absolute inset-0 w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-80"></div>
+        <div class="reveal reveal-d1">
+          <span class="eyebrow mb-2">Paso a paso</span>
+          <h2 class="font-display font-bold text-4xl md:text-5xl text-white mt-3 mb-6 uppercase">¿Estás listo para tu <br><span class="text-red font-metal tracking-wider normal-case text-5xl">Primer Tatuaje?</span></h2>
+          <p class="text-paper-dim text-sm md:text-base leading-relaxed mb-8">
+            Estos son los pasos fundamentales para que tu primer tatuaje sea un éxito total y la experiencia sea perfecta.
+          </p>
         </div>
 
-        <div class="reveal reveal-d2">
-          <span class="eyebrow mb-2">01—05. Preguntas Frecuentes</span>
-          <h2 class="font-display font-bold text-4xl md:text-5xl text-white mt-3 mb-6">Todo lo que <br><span class="text-red">necesitas saber</span></h2>
-          <p class="text-paper-dim text-sm md:text-base leading-relaxed mb-8">
-            Somos especialistas multimarca en Concepción. Conocemos tu vehículo por dentro, usamos herramientas de precisión y te entregamos resultados garantizados.
-          </p>
-
-          <div class="space-y-4">
-            <div class="border border-line rounded-lg overflow-hidden bg-panel transition-colors hover:border-line-light">
-              <button class="w-full text-left p-5 flex justify-between items-center" onclick="toggleFaq(this)">
-                <span class="font-bold text-sm tracking-wider uppercase text-white">¿QUÉ SERVICIOS OFRECEN?</span>
-                <i class="fa-solid fa-plus text-red bg-red/10 p-2 rounded transition-transform"></i>
-              </button>
-              <div class="faq-content hidden px-5 pb-5 text-steel-dim text-sm leading-relaxed border-t border-line">
-                Ofrecemos desabolladura y pintura al horno, mantenciones pautadas, diagnósticos avanzados con escáner, mecánica general y detailing premium multimarca.
-              </div>
+        <div class="reveal reveal-d2 space-y-4">
+          <!-- Accordion Item 1 -->
+          <div class="border border-line rounded-lg overflow-hidden bg-panel transition-colors hover:border-line-light">
+            <button class="w-full text-left p-5 flex justify-between items-center" onclick="toggleFaq(this)">
+              <span class="font-rock font-bold text-base tracking-wider uppercase text-white">DEFINIR ESTILO</span>
+              <i class="fa-solid fa-plus text-red bg-red/10 p-2 rounded transition-transform"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 text-paper-dim text-sm leading-relaxed border-t border-line">
+              Lo esencial es tener claro el estilo, más tener una idea de lo que quieres llevar a cabo en la pieza. Puedes agendar una cita de diseño junto a tu tatuador si no estás claro con tu idea; un ejemplo de estilo serían: escala de grises, tribales, minimalismo, full color, etc.
             </div>
+          </div>
 
-            <div class="border border-line rounded-lg overflow-hidden bg-panel transition-colors hover:border-line-light">
-              <button class="w-full text-left p-5 flex justify-between items-center" onclick="toggleFaq(this)">
-                <span class="font-bold text-sm tracking-wider uppercase text-white">¿CÓMO PUEDO PROGRAMAR UNA CITA?</span>
-                <i class="fa-solid fa-plus text-red bg-red/10 p-2 rounded transition-transform"></i>
-              </button>
-              <div class="faq-content hidden px-5 pb-5 text-steel-dim text-sm leading-relaxed border-t border-line">
-                Puedes agendar directamente haciendo clic en el botón de WhatsApp o llamando directamente a nuestro taller.
-              </div>
+          <!-- Accordion Item 2 -->
+          <div class="border border-line rounded-lg overflow-hidden bg-panel transition-colors hover:border-line-light">
+            <button class="w-full text-left p-5 flex justify-between items-center" onclick="toggleFaq(this)">
+              <span class="font-rock font-bold text-base tracking-wider uppercase text-white">DEFINIR DISEÑO</span>
+              <i class="fa-solid fa-plus text-red bg-red/10 p-2 rounded transition-transform"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 text-paper-dim text-sm leading-relaxed border-t border-line">
+              Tener en consideración que a mayor información que quieras entregar en la pieza, mayor podría ser el tamaño. Si tu idea no es tener un tatuaje tan grande, la idea debe ser lo más acotada posible. De lo contrario se genera una composición con mayor espacio e impacto visual.
             </div>
+          </div>
 
-            <div class="border border-line rounded-lg overflow-hidden bg-panel transition-colors hover:border-line-light">
-              <button class="w-full text-left p-5 flex justify-between items-center" onclick="toggleFaq(this)">
-                <span class="font-bold text-sm tracking-wider uppercase text-white">¿QUÉ MEDIOS DE PAGO ACEPTAN?</span>
-                <i class="fa-solid fa-plus text-red bg-red/10 p-2 rounded transition-transform"></i>
-              </button>
-              <div class="faq-content hidden px-5 pb-5 text-steel-dim text-sm leading-relaxed border-t border-line">
-                Aceptamos efectivo, transferencias bancarias y tarjetas de crédito/débito vía Transbank.
-              </div>
+          <!-- Accordion Item 3 -->
+          <div class="border border-line rounded-lg overflow-hidden bg-panel transition-colors hover:border-line-light">
+            <button class="w-full text-left p-5 flex justify-between items-center" onclick="toggleFaq(this)">
+              <span class="font-rock font-bold text-base tracking-wider uppercase text-white">SESIONES DE TATUAJE</span>
+              <i class="fa-solid fa-plus text-red bg-red/10 p-2 rounded transition-transform"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 text-paper-dim text-sm leading-relaxed border-t border-line">
+              Dependiendo del tamaño de la pieza, hay tatuajes que pueden quedar terminados en una sola sesión. Para proyectos de mayor escala se coordinan varias sesiones (líneas primero, luego sombras y color).
+            </div>
+          </div>
+
+          <!-- Accordion Item 4 -->
+          <div class="border border-line rounded-lg overflow-hidden bg-panel transition-colors hover:border-line-light">
+            <button class="w-full text-left p-5 flex justify-between items-center" onclick="toggleFaq(this)">
+              <span class="font-rock font-bold text-base tracking-wider uppercase text-white">CUIDADOS POST TATUAJE</span>
+              <i class="fa-solid fa-plus text-red bg-red/10 p-2 rounded transition-transform"></i>
+            </button>
+            <div class="faq-content hidden px-5 pb-5 text-paper-dim text-sm leading-relaxed border-t border-line">
+              Para una cicatrización perfecta debes seguir las instrucciones del artista: lavado con agua y jabón neutro, hidratación con crema cicatrizante especializada y protección contra el sol durante los primeros días.
             </div>
           </div>
         </div>
@@ -514,78 +456,51 @@
     </div>
   </section>
 
-  <!-- FORMULARIO DE LEADS -->
-  <section id="contacto" class="py-24 bg-[rgba(10,10,12,0.8)] relative">
-    <div class="max-w-6xl mx-auto px-6">
-      
-      <div class="flex flex-col md:flex-row bg-ink border border-line-light rounded-2xl overflow-hidden shadow-2xl reveal">
-        <div class="w-full md:w-5/12 h-64 md:h-auto relative">
-          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop" alt="Auto en Movimiento" class="absolute inset-0 w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-r from-transparent to-ink opacity-90 md:opacity-100"></div>
-        </div>
-
-        <div class="w-full md:w-7/12 p-8 md:p-12 relative z-10">
-          <span class="eyebrow mb-2 text-[11px]">TE CONTACTAMOS DE INMEDIATO</span>
-          <h2 class="font-display font-bold text-4xl md:text-5xl text-white mt-2 mb-4 leading-none italic tracking-wide">DÉJANOS TU CELULAR Y <br>TE LLAMAMOS</h2>
-          <p class="text-steel-dim text-sm mb-8">Ingresa tu nombre y número de teléfono a continuación. Nos comunicaremos contigo a la brevedad para coordinar tu servicio.</p>
-
-          <form action="#" method="POST" class="space-y-5">
-            <div>
-              <label class="block text-[10px] uppercase tracking-widest text-steel mb-2 ml-1">NOMBRE</label>
-              <input type="text" placeholder="Tu Nombre" class="custom-input" required>
-            </div>
-            <div>
-              <label class="block text-[10px] uppercase tracking-widest text-steel mb-2 ml-1">TELÉFONO</label>
-              <input type="tel" placeholder="+56 9 1234 5678" class="custom-input" required>
-            </div>
-            <button type="submit" class="w-full bg-gradient-to-r from-[#ff512f] to-[#dd2476] text-white font-bold text-sm uppercase tracking-widest py-4 rounded hover:opacity-90 transition-all duration-300 mt-2 shadow-[0_0_15px_rgba(230,57,70,0.3)]">
-              QUIERO QUE ME LLAMEN
-            </button>
-          </form>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- UBICACIÓN -->
+  <!-- UBICACIÓN Y CALENDARIO -->
   <section id="ubicacion" class="py-24 border-t border-line relative">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
 
-        <div class="lg:col-span-4 reveal">
+        <div class="lg:col-span-5 reveal">
           <span class="eyebrow">Visítanos</span>
-          <h2 class="font-display font-bold uppercase mt-4 mb-8 text-5xl md:text-6xl text-white">¿Dónde<br>estamos?</h2>
+          <h2 class="font-metal uppercase mt-4 mb-8 text-5xl md:text-6xl text-white tracking-widest">¿DÓNDE ESTAMOS?</h2>
 
-          <div class="border border-line rounded-xl p-8 bg-panel glass-card">
+          <div class="border border-line rounded-xl p-8 bg-panel mb-8">
             <div class="flex items-start gap-4 mb-6">
               <i class="fa-solid fa-location-dot text-red text-xl mt-1"></i>
               <div>
                 <p class="font-bold uppercase tracking-wider text-xs mb-1 text-white">Dirección</p>
-                <p class="text-sm text-paper-dim">Ongolmo 716,<br>Concepción, Biobío</p>
+                <p class="text-sm text-paper-dim">Tucapel 391, Oficina A<br>Centro de Concepción, Biobío</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
               <i class="fa-regular fa-clock text-red text-xl mt-1"></i>
               <div>
-                <p class="font-bold uppercase tracking-wider text-xs mb-1 text-white">Horario</p>
-                <p class="text-sm text-paper-dim">Lun–Vie: 09:00–18:30<br>Sáb: 09:00–14:00</p>
+                <p class="font-bold uppercase tracking-wider text-xs mb-1 text-white">Horario de Atención</p>
+                <p class="text-sm text-paper-dim">Lun–Vie: 11:00 – 19:30<br>Sáb: Previa coordinación de cita</p>
               </div>
             </div>
           </div>
           
-          <div class="mt-8">
-            <a href="tel:+56977842816" class="btn btn-solid w-full py-4 text-center justify-center">
-              <i class="fa-solid fa-phone"></i> LLAMAR AL TALLER
-            </a>
+          <!-- AGENDAMIENTO CAL.COM DIRECTO AQUÍ -->
+          <div id="agendar" class="bg-cardBg border border-line rounded-xl overflow-hidden shadow-2xl">
+             <div class="p-4 border-b border-line text-center bg-panel">
+                <p class="font-rock font-bold tracking-widest uppercase text-white">RESERVA TU HORA</p>
+             </div>
+             <div id="my-cal-inline" class="w-full h-[600px]" 
+                  data-cal-link="martin-bustamante-y8o12p/30min" 
+                  data-cal-namespace="evaluacion"
+                  data-cal-config='{"layout":"month_view","theme":"dark"}'>
+             </div>
           </div>
         </div>
 
-        <div class="lg:col-span-8 reveal reveal-d2">
-          <div class="map-wrapper shadow-2xl">
+        <div class="lg:col-span-7 reveal reveal-d2 h-full">
+          <div class="w-full h-full min-h-[500px] relative rounded-2xl overflow-hidden border border-line-light shadow-2xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.522964177432!2d-73.0487042!3d-36.8273617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669b5cfaee313cb%3A0xc6fb698295b9c1d!2sOngolmo%20716%2C%20Concepci%C3%B3n%2C%20B%C3%ADo%20B%C3%ADo!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl"
-              title="Ubicación Innovautos Concepción"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.858852309105!2d-73.050412!3d-36.827123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669b5d2e742e4d9%3A0x8ad0419db6e8b233!2sTucapel%20391%2C%20Concepci%C3%B3n%2C%20B%C3%ADo%20B%C3%ADo!5e0!3m2!1ses!2scl!4v1716492000000!5m2!1ses!2scl"
+              title="Ubicación Hipso Tattoo"
+              class="absolute inset-0 w-full h-full border-0 opacity-90 invert-[90%] hue-rotate-[180deg] contrast-[110%]"
               allowfullscreen="" loading="lazy">
             </iframe>
           </div>
@@ -598,16 +513,19 @@
 
 <!-- FOOTER -->
 <footer class="bg-ink border-t-4 border-red py-12">
-  <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
-    <div class="font-display font-bold uppercase text-2xl text-white">Innovautos Concepción</div>
-    <p class="text-xs font-mono text-steel-dim">© 2026. Todos los derechos reservados. COD: DES-PIN-MEC-3D</p>
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+    
+    <div class="flex items-center gap-3">
+        <img src="./assets/imagen1.jpg" alt="Logo Hipso" class="h-10 w-10 rounded-full object-cover border border-line">
+        <div class="text-left">
+            <p class="font-metal text-2xl text-white tracking-widest">HIPSO<span class="text-red">_TATTOO</span></p>
+            <p class="text-[11px] text-steel-dim font-mono">Tucapel 391 Of. A, Concepción</p>
+        </div>
+    </div>
+
+    <p class="text-xs font-mono text-steel-dim">© 2026 HIPSO_TATTOO. Todos los derechos reservados.</p>
   </div>
 </footer>
-
-<!-- FAB Whatsapp -->
-<a href="https://wa.me/56977842816" target="_blank" rel="noopener" class="fab-wsp" aria-label="Agendar por WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
 
 <script>
   // Navbar scroll
@@ -624,15 +542,15 @@
     mobileMenu.classList.toggle('open', open);
   });
 
-  // Reveal
+  // Reveal (SCROLL NATIVO SEGURO)
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('in');
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.10 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // FAQ Toggle
+  // FAQ Toggle (Acordeón preparacion)
   function toggleFaq(btn) {
     const content = btn.nextElementSibling;
     const icon = btn.querySelector('i');
@@ -641,32 +559,13 @@
     icon.classList.toggle('fa-minus');
   }
 
-  // 3D MODEL LOGIC
-  const carModel = document.querySelector('#carModel');
-
-  function changeVehicle(glbUrl, btn) {
-    document.querySelectorAll('.car-select-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    carModel.setAttribute('src', glbUrl);
-  }
-
-  function setCarPaint(btnElement, rgbaNormalizedArray, isMatte = false) {
-    if (!carModel || !carModel.model) return;
-
-    const materials = carModel.model.materials;
-    if (materials && materials.length > 0) {
-      materials.forEach(mat => {
-        const matName = mat.name.toLowerCase();
-        if (matName.includes('body') || matName.includes('paint') || matName.includes('car_paint') || matName.includes('shell') || matName.includes('carroceria') || matName.includes('subaru') || matName.includes('mercedes')) {
-          mat.pbrMetallicRoughness.setBaseColorFactor(rgbaNormalizedArray);
-          mat.pbrMetallicRoughness.setMetallicFactor(isMatte ? 0.1 : 0.8);
-          mat.pbrMetallicRoughness.setRoughnessFactor(isMatte ? 0.7 : 0.05);
-        }
+  // Carga de Cal.com
+  try {
+      Cal.ns.evaluacion("initRender", {
+          elementOrSelector: "#my-cal-inline",
       });
-    }
-
-    document.querySelectorAll('.color-swatch-pro').forEach(b => b.classList.remove('active'));
-    btnElement.classList.add('active');
+  } catch(e){
+      console.log(e);
   }
 </script>
 
