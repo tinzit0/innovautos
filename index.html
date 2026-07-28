@@ -167,7 +167,6 @@
   /* ---------- CONFIGURADOR 3D ESTILO REALISTA ---------- */
   model-viewer#carModel {
     width: 100%;
-    /* Altura reducida para eliminar el espacio excesivo */
     height: 350px; 
     background-color: transparent;
     --poster-color: transparent;
@@ -375,28 +374,31 @@
     </div>
   </section>
 
-  <!-- SECCIÓN SIMULADOR 3D FOTORREALISTA -->
+  <!-- SECCIÓN SIMULADOR 3D FOTORREALISTA (CARGA DE SUBARU WRX DESDE ASSETS LOCAL) -->
   <section id="configurador3d" class="py-24 bg-ink border-y border-line relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 text-center">
       <div class="reveal mb-10">
         <span class="eyebrow justify-center">Estudio de Pintura al Horno</span>
-        <h2 class="font-display uppercase mt-4 text-4xl md:text-6xl">Configurador 3D Realista</h2>
+        <h2 class="font-display uppercase mt-4 text-4xl md:text-6xl">Configurador 3D — Subaru WRX</h2>
         <p class="text-steel text-sm md:text-base mt-2 max-w-2xl mx-auto">Gira la carrocería en 360° para inspeccionar los acabados y reflejos de nuestra pintura metalizada y opaca simulando las luces de nuestro taller.</p>
       </div>
 
       <!-- Contenedor Principal del Visor 3D -->
       <div class="reveal reveal-d1 relative max-w-5xl mx-auto rounded-2xl border border-line bg-[rgba(10,10,13,0.85)] p-4 md:p-8 shadow-2xl backdrop-blur-xl">
         
-        <!-- VISOR 3D DE ALTO RENDIMIENTO (ESPACIO REDUCIDO Y ZOOM) -->
+        <!-- VISOR 3D CARGANDO ARCHIVO LOCAL -->
+        <!-- NOTA: Asegúrate de que el archivo se llame exactamente "subaru.glb" y esté en tu carpeta "assets" -->
         <model-viewer id="carModel"
-                      src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@master/examples/models/gltf/ferrari.glb"
-                      alt="Vehículo 3D Fotorrealista"
+                      src="assets/subaru.glb"
+                      environment-image="https://modelviewer.dev/shared-assets/environments/aircraft_workshop_01_1k.hdr"
+                      alt="Subaru WRX 3D - Taller Innovautos"
                       loading="eager"
                       reveal="auto"
                       auto-rotate
                       camera-controls
-                      shadow-intensity="1"
-                      exposure="1.1"
+                      shadow-intensity="1.5"
+                      shadow-softness="0.5"
+                      exposure="1.2"
                       camera-orbit="45deg 75deg auto"
                       field-of-view="25deg"
                       touch-action="pan-y">
@@ -414,14 +416,14 @@
           
           <div class="flex flex-wrap justify-center items-center gap-4">
             <!-- Botón de color (Es Metalizado/Brillante por defecto: isMatte = false) -->
-            <button id="btnRed" class="color-swatch-pro active" onclick="setCarPaint(this, [0.85, 0.05, 0.05, 1.0], false)">
-              <span class="color-pill" style="background:#E63946;"></span>
-              <span class="text-xs font-mono text-white">Rojo Candy (Brillo)</span>
+            <button class="color-swatch-pro active" onclick="setCarPaint(this, [0.05, 0.15, 0.5, 1.0], false)">
+              <span class="color-pill" style="background:#1E3A8A;"></span>
+              <span class="text-xs font-mono text-white">Azul Subaru (Perlado)</span>
             </button>
 
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.05, 0.15, 0.5, 1.0], false)">
-              <span class="color-pill" style="background:#1E3A8A;"></span>
-              <span class="text-xs font-mono text-white">Azul Perlado</span>
+            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.85, 0.05, 0.05, 1.0], false)">
+              <span class="color-pill" style="background:#E63946;"></span>
+              <span class="text-xs font-mono text-white">Rojo Candy</span>
             </button>
 
             <button class="color-swatch-pro" onclick="setCarPaint(this, [0.75, 0.77, 0.8, 1.0], false)">
@@ -703,24 +705,26 @@
     observer.observe(el);
   });
 
-  // ---------- SCRIPT OPTIMIZADO PARA ACABADOS REALISTAS PBR ----------
-  const carModel = document.querySelector('#carModel');
-
-  // Asegurarnos de que el modelo cargue con color rojo por defecto y no cromado
-  carModel.addEventListener('load', () => {
-    const defaultBtn = document.getElementById('btnRed');
-    setCarPaint(defaultBtn, [0.85, 0.05, 0.05, 1.0], false);
-  });
-
+  // ---------- SCRIPT OPTIMIZADO PARA CAMBIO DE COLOR EN EL SUBARU WRX 3D ----------
   function setCarPaint(btnElement, rgbaNormalizedArray, isMatte = false) {
-    if (!carModel || !carModel.model) return;
+    const modelViewer = document.querySelector('#carModel');
+    if (!modelViewer || !modelViewer.model) return;
 
-    const materials = carModel.model.materials;
+    const materials = modelViewer.model.materials;
     if (materials && materials.length > 0) {
+      let applied = false;
+      
+      // Imprime en la consola del navegador los materiales para ayudar a identificar si hay errores.
+      console.log("Materiales disponibles en este modelo:", materials.map(m => m.name));
+
+      // Recorremos los materiales del vehículo 3D.
       materials.forEach(mat => {
         const matName = mat.name.toLowerCase();
         
-        if (matName.includes('body') || matName.includes('paint') || matName.includes('car_paint') || matName.includes('primary') || matName.includes('shell') || matName.includes('carroceria')) {
+        // Estas son las palabras clave más comunes que usan los diseñadores 3D para la pintura exterior.
+        if (matName.includes('body') || matName.includes('paint') || matName.includes('car_paint') || 
+            matName.includes('primary') || matName.includes('shell') || matName.includes('carroceria') || 
+            matName.includes('blue') || matName.includes('subaru')) {
           
           mat.pbrMetallicRoughness.setBaseColorFactor(rgbaNormalizedArray);
           
@@ -731,10 +735,17 @@
             mat.pbrMetallicRoughness.setMetallicFactor(0.8);
             mat.pbrMetallicRoughness.setRoughnessFactor(0.05);
           }
+          applied = true;
         }
       });
+
+      // Fallback: Si no tiene un nombre claro, pinta el primer material importante
+      if (!applied) {
+        materials[0].pbrMetallicRoughness.setBaseColorFactor(rgbaNormalizedArray);
+      }
     }
 
+    // Actualiza el CSS de los botones para saber cuál está seleccionado
     document.querySelectorAll('.color-swatch-pro').forEach(b => b.classList.remove('active'));
     btnElement.classList.add('active');
   }
