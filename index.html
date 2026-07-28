@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Innovautos Concepción | Taller Automotriz — Desabolladura, Pintura y Mecánica</title>
-<meta name="description" content="Taller Automotriz Innovautos en Concepción. Desabolladura y pintura al horno, mecánica especializada, diagnóstico computarizado y detailing. Ongolmo 716, Concepción.">
+<meta name="description" content="Taller Automotriz Innovautos en Concepción. Desabolladura y pintura al horno, mecánica en general, mantenciones por kilometraje, diagnóstico y detailing. Ongolmo 716, Concepción.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -246,7 +246,6 @@
 
       <span class="eyebrow mb-6 relative z-20 justify-center">Taller Certificado · Concepción</span>
 
-      <!-- AQUI SE CORRIGIÓ EL PROBLEMA DEL TEXTO INVISIBLE Y LA ALINEACIÓN -->
       <h1 class="font-display uppercase leading-none mt-2 relative z-20 text-center w-full" style="font-size: clamp(3rem, 8vw, 6.5rem); text-shadow: 0 10px 30px rgba(0,0,0,0.8);">
         Precisión en<br>cada <span class="text-red" style="text-shadow: 0 0 20px var(--red-glow);">detalle</span>
       </h1>
@@ -282,7 +281,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Mecánica -->
-        <div class="glass-card reveal reveal-d1 rounded-xl p-8 md:p-12 group">
+        <div class="glass-card reveal reveal-d1 rounded-xl p-8 md:p-12 group flex flex-col">
           <div class="flex items-center justify-between mb-10 pb-6 border-b border-line">
             <div>
               <span class="code-tag mb-3">COD · MEC</span>
@@ -292,7 +291,7 @@
               <i class="fa-solid fa-wrench text-2xl text-red"></i>
             </div>
           </div>
-          <ul class="space-y-8">
+          <ul class="space-y-8 flex-1">
             <li class="flex items-start gap-5">
               <span class="divider-dot mt-2 shrink-0"></span>
               <div>
@@ -303,14 +302,14 @@
             <li class="flex items-start gap-5">
               <span class="divider-dot mt-2 shrink-0"></span>
               <div>
-                <h4 class="font-bold uppercase tracking-wider text-sm text-paper">Mecánica especializada</h4>
+                <h4 class="font-bold uppercase tracking-wider text-sm text-paper">Mecánica en general</h4>
                 <p class="text-sm mt-2 text-paper-dim leading-relaxed">Reparaciones de motor, frenos, tren delantero y solución a fallas complejas.</p>
               </div>
             </li>
             <li class="flex items-start gap-5">
               <span class="divider-dot mt-2 shrink-0"></span>
               <div>
-                <h4 class="font-bold uppercase tracking-wider text-sm text-paper">Mantención por kilometraje</h4>
+                <h4 class="font-bold uppercase tracking-wider text-sm text-paper">Mantenciones por kilometraje</h4>
                 <p class="text-sm mt-2 text-paper-dim leading-relaxed">Pautas de mantenimiento preventivo estrictamente según el manual del fabricante.</p>
               </div>
             </li>
@@ -318,7 +317,7 @@
         </div>
 
         <!-- Carrocería -->
-        <div class="glass-card reveal reveal-d2 rounded-xl p-8 md:p-12 group">
+        <div class="glass-card reveal reveal-d2 rounded-xl p-8 md:p-12 group flex flex-col">
           <div class="flex items-center justify-between mb-10 pb-6 border-b border-line">
             <div>
               <span class="code-tag mb-3">COD · EST</span>
@@ -328,25 +327,19 @@
               <i class="fa-solid fa-spray-can-sparkles text-2xl text-red"></i>
             </div>
           </div>
-          <ul class="space-y-8">
+          <!-- Centrado vertical para equilibrar con los 3 ítems de la otra tarjeta -->
+          <ul class="space-y-8 flex-1 flex flex-col justify-center">
             <li class="flex items-start gap-5">
               <span class="divider-dot mt-2 shrink-0"></span>
               <div>
                 <h4 class="font-bold uppercase tracking-wider text-sm text-paper">Desabolladura y pintura</h4>
-                <p class="text-sm mt-2 text-paper-dim leading-relaxed">Reparación de colisiones, cuadratura y pintura al horno con tecnología de igualación de color.</p>
+                <p class="text-sm mt-2 text-paper-dim leading-relaxed">Reparación de colisiones, cuadratura y pintura al horno con tecnología de igualación de color original.</p>
               </div>
             </li>
             <li class="flex items-start gap-5">
               <span class="divider-dot mt-2 shrink-0"></span>
               <div>
-                <h4 class="font-bold uppercase tracking-wider text-sm text-paper">Parabrisas</h4>
-                <p class="text-sm mt-2 text-paper-dim leading-relaxed">Venta, instalación y reparación profesional de cristales automotrices multimarca.</p>
-              </div>
-            </li>
-            <li class="flex items-start gap-5">
-              <span class="divider-dot mt-2 shrink-0"></span>
-              <div>
-                <h4 class="font-bold uppercase tracking-wider text-sm text-paper">Detailing 360°</h4>
+                <h4 class="font-bold uppercase tracking-wider text-sm text-paper">Detailing</h4>
                 <p class="text-sm mt-2 text-paper-dim leading-relaxed">Limpieza profunda, pulido de corrección, sellado cerámico y estética interior premium.</p>
               </div>
             </li>
@@ -372,16 +365,22 @@
         <div class="glass-card reveal reveal-d1 rounded-xl p-8 md:p-10">
           <i class="fa-solid fa-spray-can absolute -right-6 -top-6 text-[12rem] text-red opacity-10 rotate-12 transition-transform duration-500 group-hover:scale-110"></i>
           <span class="code-tag mb-4">PROMO · 01</span>
-          <h3 class="font-display uppercase text-3xl md:text-4xl mb-2 text-white">Pintura general</h3>
-          <p class="font-mono font-bold text-2xl text-red mb-8">Desde $699.990</p>
+          <h3 class="font-display uppercase text-3xl md:text-4xl mb-1 text-white">Pintado Profesional</h3>
+          <p class="text-xs text-steel uppercase tracking-widest mb-6 relative z-10">En Horno · Color Original · A Puertas Cerradas</p>
           
-          <ul class="space-y-4 relative z-10 font-mono text-sm">
-            <li class="flex justify-between pb-3 border-b border-line"><span class="text-steel">Hatchback</span><span class="font-bold text-paper">$780.000</span></li>
-            <li class="flex justify-between pb-3 border-b border-line"><span class="text-steel">Sedán</span><span class="font-bold text-paper">$850.000</span></li>
-            <li class="flex justify-between pb-3 border-b border-line"><span class="text-steel">SUV</span><span class="font-bold text-paper">$920.000</span></li>
-            <li class="flex justify-between pb-3 border-b border-line"><span class="text-steel">Pick Up</span><span class="font-bold text-paper">$1.000.000</span></li>
+          <ul class="space-y-4 relative z-10 font-mono text-sm mb-8">
+            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Hatchback</span><span class="font-bold text-red text-xl">$1.100.000</span></li>
+            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Sedán</span><span class="font-bold text-red text-xl">$1.250.000</span></li>
+            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">SUV</span><span class="font-bold text-red text-xl">$1.350.000</span></li>
+            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Pick Up</span><span class="font-bold text-red text-xl">$1.550.000</span></li>
           </ul>
-          <p class="text-xs text-steel-dim italic mt-6">* El valor final puede variar según la magnitud de la desabolladura previa requerida.</p>
+
+          <div class="flex flex-col lg:flex-row gap-3 mb-6 relative z-10">
+            <div class="bg-paper text-ink font-bold text-xs py-2 px-4 rounded text-center whitespace-nowrap">2 AÑOS GARANTÍA</div>
+            <div class="bg-red/10 border border-red text-red font-bold text-xs py-2 px-4 rounded text-center whitespace-nowrap">INCLUYE SELLADO CERÁMICO</div>
+          </div>
+          
+          <p class="text-xs text-steel-dim italic relative z-10">* Sujeto a evaluación técnica del vehículo. Precios referenciales con IVA.</p>
         </div>
 
         <!-- Promo Mecánica -->
