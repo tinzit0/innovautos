@@ -18,8 +18,8 @@
 <style>
   :root {
     --ink: #070709;
-    --panel: rgba(18, 18, 22, 0.75);
-    --panel-hover: rgba(28, 28, 33, 0.9);
+    --panel: rgba(18, 18, 22, 0.85);
+    --panel-hover: rgba(28, 28, 33, 0.95);
     --line: #222226;
     --line-light: rgba(255, 255, 255, 0.12);
     --steel: #9ca3af;
@@ -69,7 +69,7 @@
   }
 
   /* Navbar */
-  .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 60; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 20px 0; background: transparent; }
+  .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 60; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); padding: 18px 0; background: transparent; }
   .navbar.scrolled { background: rgba(7, 7, 9, 0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--line); padding: 12px 0; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6); }
   .navlink { font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--steel); transition: color 0.3s; }
   .navlink:hover { color: #fff; }
@@ -90,9 +90,9 @@
   .hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); background: var(--red); }
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background: var(--red); }
-  .mobile-menu { position: fixed; inset: 0; background: rgba(7, 7, 9, 0.98); backdrop-filter: blur(25px); z-index: 55; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
+  .mobile-menu { position: fixed; inset: 0; background: rgba(7, 7, 9, 0.98); backdrop-filter: blur(25px); z-index: 55; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
   .mobile-menu.open { opacity: 1; pointer-events: auto; }
-  .mobile-menu a { font-family: 'Bebas Neue', sans-serif; font-size: 40px; letter-spacing: 0.05em; color: var(--paper); transition: color 0.3s; }
+  .mobile-menu a { font-family: 'Bebas Neue', sans-serif; font-size: 32px; letter-spacing: 0.05em; color: var(--paper); transition: color 0.3s; }
   .mobile-menu a:hover { color: var(--red); }
 
   /* Animations */
@@ -120,23 +120,31 @@
     z-index: 0;
   }
 
-  /* Estilos específicos para la barra superior tipo Lyon Service */
   .hero-stat-item {
     border-bottom: 1px solid rgba(255, 255, 255, 0.18);
     padding-bottom: 8px;
   }
 
+  /* Glass Box para texto legible sobre fotos */
+  .service-glass-box {
+    background: rgba(10, 10, 14, 0.88);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  }
+
   /* 3D Model Viewer */
-  model-viewer#carModel { width: 100%; height: 380px; background-color: transparent; --poster-color: transparent; cursor: grab; border: 1px solid var(--line); border-radius: 12px; }
+  model-viewer#carModel { width: 100%; height: 380px; background-color: transparent; --poster-color: transparent; cursor: grab; border: 1px solid var(--line); border-radius: 12px; touch-action: pan-y !important; }
   @media (min-width: 768px) { model-viewer#carModel { height: 480px; } }
-  model-viewer#carModel:active { cursor: grabbing; }
 
   /* Selectores 3D */
-  .car-select-btn { display: flex; align-items: center; gap: 8px; background: rgba(20, 20, 25, 0.8); border: 1px solid var(--line); padding: 10px 18px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--paper-dim); transition: all 0.3s ease; cursor: pointer; }
+  .car-select-btn { display: flex; align-items: center; gap: 8px; background: rgba(20, 20, 25, 0.8); border: 1px solid var(--line); padding: 10px 18px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--paper-dim); transition: all 0.3s ease; cursor: pointer; white-space: nowrap; }
   .car-select-btn:hover { border-color: var(--steel); color: #fff; }
   .car-select-btn.active { border-color: var(--red); background: rgba(230, 57, 70, 0.15); color: #fff; box-shadow: 0 0 12px var(--red-glow); }
 
-  .color-swatch-pro { display: flex; align-items: center; gap: 10px; background: rgba(15, 15, 18, 0.8); border: 1px solid var(--line); padding: 10px 18px; border-radius: 8px; transition: all 0.3s ease; cursor: pointer; }
+  .color-swatch-pro { display: flex; align-items: center; gap: 10px; background: rgba(15, 15, 18, 0.8); border: 1px solid var(--line); padding: 10px 18px; border-radius: 8px; transition: all 0.3s ease; cursor: pointer; white-space: nowrap; }
   .color-swatch-pro:hover { border-color: var(--steel); background: rgba(25, 25, 30, 0.9); }
   .color-swatch-pro.active { border-color: var(--red); box-shadow: 0 0 15px rgba(230,57,70,0.3); background: rgba(230,57,70,0.1); }
   .color-pill { width: 20px; height: 20px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.2); box-shadow: inset 0 2px 4px rgba(0,0,0,0.5); flex-shrink: 0; }
@@ -144,9 +152,8 @@
   .custom-input { width: 100%; background: #0c0c0f; border: 1px solid var(--line-light); padding: 14px 16px; border-radius: 6px; color: var(--paper); font-size: 14px; transition: border-color 0.3s ease; }
   .custom-input:focus { outline: none; border-color: var(--red); }
 
-  /* Map Container */
-  .map-wrapper { width: 100%; height: 100%; min-height: 450px; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--line-light); }
-  .map-wrapper iframe { width: 100% !important; height: 100% !important; min-height: 450px; border: 0; }
+  .map-wrapper { width: 100%; height: 100%; min-height: 400px; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--line-light); }
+  .map-wrapper iframe { width: 100% !important; height: 100% !important; min-height: 400px; border: 0; }
 </style>
 </head>
 
@@ -166,7 +173,7 @@
       <a href="#servicios" class="navlink">Servicios</a>
       <a href="#configurador3d" class="navlink">Estudio 3D</a>
       <a href="#promociones" class="navlink">Promociones</a>
-      <a href="#faq" class="navlink">FAQ</a>
+      <a href="#faq" class="navlink">Preguntas Frecuentes</a>
       <a href="#contacto" class="btn btn-solid !py-2 !px-6 !text-xs">
         <i class="fa-brands fa-whatsapp text-lg"></i> Agendar
       </a>
@@ -178,36 +185,34 @@
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
+<!-- MOBILE MENU (Auto-Cierre al seleccionar una opción) -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#servicios">Servicios</a>
-  <a href="#configurador3d">Estudio 3D</a>
-  <a href="#promociones">Promociones</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contacto" class="btn btn-solid mt-4">
+  <a href="#servicios" onclick="closeMobileMenu()">Servicios</a>
+  <a href="#configurador3d" onclick="closeMobileMenu()">Estudio 3D</a>
+  <a href="#promociones" onclick="closeMobileMenu()">Promociones & Precios</a>
+  <a href="#faq" onclick="closeMobileMenu()">Preguntas Frecuentes</a>
+  <a href="#contacto" onclick="closeMobileMenu()" class="btn btn-solid mt-4">
     <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
   </a>
 </div>
 
-<!-- HERO PRINCIPAL CON DATOS REPOSICIONADOS MÁS ARRIBA -->
-<header class="relative min-h-[95svh] flex flex-col justify-start bg-ink overflow-hidden pt-20 pb-16 border-b border-line">
+<!-- HERO PRINCIPAL -->
+<header class="relative min-h-[95svh] flex flex-col justify-start bg-ink overflow-hidden pt-28 pb-16 border-b border-line">
   
-  <!-- Video de fondo -->
   <video autoplay loop muted playsinline class="hero-video-bg">
     <source src="assets/video1.mp4" type="video/mp4">
   </video>
 
-  <!-- Gradiente para lectura limpia -->
   <div class="absolute inset-0 z-[1] bg-gradient-to-r from-black/95 via-black/80 to-black/40"></div>
 
   <div class="max-w-7xl mx-auto px-6 w-full relative z-10 pt-10">
     
-    <!-- Banner de Datos Superiores: Posicionado justo arriba con mayor espacio vertical hacia el título -->
-    <div class="reveal mb-20 md:mb-24">
+    <!-- Banner de Datos Superiores -->
+    <div class="reveal mb-14">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-6 max-w-5xl font-mono">
         <div class="hero-stat-item">
           <p class="text-steel uppercase tracking-widest text-[10px] mb-1 font-semibold">ESPECIALIDAD</p>
-          <p class="text-white font-bold tracking-widest text-xs md:text-sm">TALLER MULTIMARCA</p>
+          <p class="text-white font-bold tracking-widest text-xs md:text-sm">DESABOLLADURA, PINTURA Y MECÁNICA AUTOMOTRIZ</p>
         </div>
         <div class="hero-stat-item">
           <p class="text-steel uppercase tracking-widest text-[10px] mb-1 font-semibold">DISPONIBILIDAD</p>
@@ -226,20 +231,20 @@
 
     <!-- Contenido Principal -->
     <div class="max-w-3xl reveal reveal-d1">
-      <h1 class="font-display text-5xl sm:text-6xl md:text-[5.5rem] text-white leading-[1.02] tracking-tight mb-6 font-extrabold drop-shadow-2xl">
+      <h1 class="font-display text-4xl sm:text-6xl md:text-[5.5rem] text-white leading-[1.02] tracking-tight mb-6 font-extrabold drop-shadow-2xl">
         Taller <span class="font-light italic text-paper-dim" style="font-family: serif;">Innovautos</span><br>
         Siempre Confiable
       </h1>
       <p class="text-paper-dim font-medium text-sm md:text-base leading-relaxed mb-8 max-w-xl drop-shadow-lg">
-        Servicio técnico multimarca experto en Concepción. Diagnóstico de alta precisión con escáner oficial, mantenciones preventivas y reparación certificada con repuestos de calidad.
+        Servicio técnico especialista en Concepción. Desabolladura, pintura al horno, diagnóstico con escáner oficial y mantenciones certificadas.
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4">
         <a href="#contacto" class="btn btn-solid">
           <i class="fa-brands fa-whatsapp text-lg"></i> AGENDAR POR WHATSAPP
         </a>
-        <a href="#servicios" class="btn btn-ghost">
-          VER ESPECIALIDADES ↓
+        <a href="#promociones" class="btn btn-ghost border-red/50 hover:border-red">
+          <i class="fa-solid fa-tag text-red"></i> VER PRECIOS Y OFERTAS
         </a>
       </div>
     </div>
@@ -247,29 +252,36 @@
   </div>
 </header>
 
+<!-- BARRA DE MARCAS DE PINTURAS E INSUMOS -->
+<section class="py-8 bg-black/80 border-b border-line">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <span class="text-xs font-mono uppercase tracking-widest text-steel">Trabajamos con insumos de alta gama:</span>
+    <div class="flex items-center gap-10 opacity-80 grayscale hover:grayscale-0 transition-all font-mono font-bold text-sm text-paper-dim">
+      <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-red"></i> 3M PROFESSIONAL</span>
+      <span class="flex items-center gap-2"><i class="fa-solid fa-check text-red"></i> WÜRTH</span>
+      <span class="flex items-center gap-2"><i class="fa-solid fa-spray-can text-red"></i> ROBERLO</span>
+    </div>
+  </div>
+</section>
+
 <main>
 
   <!-- SECCIÓN CONFIANZA -->
-  <section id="confianza" class="relative bg-ink overflow-hidden border-b border-line py-24">
-    <div class="absolute inset-0 z-0">
-      <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2000&auto=format&fit=crop" alt="Auto Innovautos" class="w-full h-full object-cover opacity-20 grayscale">
-      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-transparent"></div>
-    </div>
-    
+  <section id="confianza" class="relative bg-ink overflow-hidden border-b border-line py-20">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-        <h2 class="font-display font-bold text-4xl sm:text-5xl md:text-6xl text-white mb-2" style="letter-spacing: 0.02em;">
-          A tu vehículo le falta <br><span class="text-red font-light italic" style="font-family: serif; text-shadow: 0 0 20px var(--red-glow);">INNOVAUTOS</span>
+      <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+        <h2 class="font-display font-bold text-3xl sm:text-5xl text-white mb-2">
+          A tu vehículo le falta <br><span class="text-red font-light italic" style="font-family: serif;">INNOVAUTOS</span>
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal reveal-d1">
-        <div class="bg-ink/80 backdrop-blur-md border border-line-light p-8 rounded-xl shadow-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+        <div class="bg-panel border border-line-light p-6 md:p-8 rounded-xl shadow-xl">
           <p class="text-sm md:text-base text-paper-dim leading-relaxed mb-0 font-medium">
-            En Innovautos conocemos tu vehículo como si fuera nuestro. Diagnóstico honesto, repuestos originales o alternativos de alta calidad y tu auto de vuelta exactamente cuando te dijimos.
+            En Innovautos conocemos tu vehículo como si fuera nuestro. Diagnóstico honesto, repuestos de alta calidad y tu auto de vuelta exactamente cuando te dijimos.
           </p>
         </div>
-        <div class="bg-ink/80 backdrop-blur-md border border-line-light p-8 rounded-xl shadow-2xl flex items-center">
+        <div class="bg-panel border border-line-light p-6 md:p-8 rounded-xl flex items-center shadow-xl">
           <p class="text-sm md:text-base text-paper-dim leading-relaxed mb-0 font-medium">
             Llevas tu auto a manos expertas en Concepción. Te explicamos directo y transparente lo que necesita, sin cobrarte de más ni darte vueltas.
           </p>
@@ -279,60 +291,68 @@
   </section>
 
   <!-- SERVICIOS -->
-  <section id="servicios" class="py-24 relative">
+  <section id="servicios" class="py-20 relative">
     <div class="max-w-7xl mx-auto px-6">
       <div class="reveal mb-12 max-w-2xl">
         <span class="eyebrow">Qué hacemos</span>
-        <h2 class="font-display font-bold uppercase mt-4 text-5xl md:text-6xl">Nuestros servicios</h2>
+        <h2 class="font-display font-bold uppercase mt-4 text-4xl md:text-6xl">Nuestros servicios</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <div class="group relative overflow-hidden rounded-2xl md:col-span-2 min-h-[320px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d1">
+        <!-- 1. Desabolladura y Pintura -->
+        <div class="group relative overflow-hidden rounded-2xl md:col-span-2 min-h-[320px] border border-line-light shadow-xl reveal">
           <img src="https://images.unsplash.com/photo-1727893304219-063d142ce6f3?q=80&w=1400&auto=format&fit=crop" alt="Desabolladura y Pintura" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent opacity-90 group-hover:opacity-70 transition-colors duration-500 z-0"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-spray-can-sparkles text-red text-2xl drop-shadow-md"></i>
-              <h3 class="font-display font-bold uppercase text-3xl sm:text-4xl text-white tracking-wider drop-shadow-lg">Desabolladura y pintura</h3>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          
+          <div class="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 service-glass-box">
+            <div class="flex items-center gap-3 mb-1">
+              <i class="fa-solid fa-spray-can-sparkles text-red text-xl"></i>
+              <h3 class="font-display font-bold uppercase text-2xl md:text-3xl text-white tracking-wider">Desabolladura y pintura</h3>
             </div>
-            <p class="text-paper text-sm max-w-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 drop-shadow-md font-medium">Reparación de colisiones y pintura al horno con igualación de color original.</p>
+            <p class="text-paper-dim text-xs md:text-sm font-medium leading-relaxed">Reparación de colisiones y pintura al horno con igualación de color original mediante tecnología 3M, Würth y Roberlo.</p>
           </div>
         </div>
 
-        <div class="group relative overflow-hidden rounded-2xl min-h-[320px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d2">
+        <!-- 2. Diagnóstico -->
+        <div class="group relative overflow-hidden rounded-2xl min-h-[320px] border border-line-light shadow-xl reveal">
           <img src="https://images.unsplash.com/photo-1702146715426-2380c6ad54c5?q=80&w=800&auto=format&fit=crop" alt="Diagnóstico Automotriz" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent opacity-90 group-hover:opacity-70 transition-colors duration-500 z-0"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-laptop-code text-red text-2xl drop-shadow-md"></i>
-              <h3 class="font-display font-bold uppercase text-3xl text-white tracking-wider drop-shadow-lg">Diagnóstico</h3>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          
+          <div class="absolute bottom-4 left-4 right-4 service-glass-box">
+            <div class="flex items-center gap-3 mb-1">
+              <i class="fa-solid fa-laptop-code text-red text-xl"></i>
+              <h3 class="font-display font-bold uppercase text-2xl text-white tracking-wider">Diagnóstico</h3>
             </div>
-            <p class="text-paper text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 drop-shadow-md font-medium">Escáner automotriz avanzado y revisión técnica completa.</p>
+            <p class="text-paper-dim text-xs md:text-sm font-medium leading-relaxed">Escáner automotriz avanzado y revisión técnica completa.</p>
           </div>
         </div>
 
-        <div class="group relative overflow-hidden rounded-2xl min-h-[320px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d1">
+        <!-- 3. Mantenciones -->
+        <div class="group relative overflow-hidden rounded-2xl min-h-[320px] border border-line-light shadow-xl reveal">
           <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=800&auto=format&fit=crop" alt="Mantención" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent opacity-90 group-hover:opacity-70 transition-colors duration-500 z-0"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-oil-can text-red text-2xl drop-shadow-md"></i>
-              <h3 class="font-display font-bold uppercase text-3xl text-white tracking-wider leading-none drop-shadow-lg">Mantenciones</h3>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          
+          <div class="absolute bottom-4 left-4 right-4 service-glass-box">
+            <div class="flex items-center gap-3 mb-1">
+              <i class="fa-solid fa-oil-can text-red text-xl"></i>
+              <h3 class="font-display font-bold uppercase text-2xl text-white tracking-wider">Mantenciones</h3>
             </div>
-            <p class="text-paper text-sm transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 drop-shadow-md font-medium">Pautas preventivas strictly según el manual del fabricante.</p>
+            <p class="text-paper-dim text-xs md:text-sm font-medium leading-relaxed">Pautas preventivas estrictamente según el manual del fabricante.</p>
           </div>
         </div>
 
-        <div class="group relative overflow-hidden rounded-2xl md:col-span-2 min-h-[320px] border border-line-light hover:border-red transition-all duration-500 shadow-xl reveal reveal-d1">
+        <!-- 4. Detailing (Sin 'Premium') -->
+        <div class="group relative overflow-hidden rounded-2xl md:col-span-2 min-h-[320px] border border-line-light shadow-xl reveal">
           <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=1400&auto=format&fit=crop" alt="Detailing" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent opacity-90 group-hover:opacity-70 transition-colors duration-500 z-0"></div>
-          <div class="absolute bottom-0 left-0 p-8 w-full z-10">
-            <div class="flex items-center gap-3 mb-3">
-              <i class="fa-solid fa-hand-sparkles text-red text-2xl drop-shadow-md"></i>
-              <h3 class="font-display font-bold uppercase text-3xl sm:text-4xl text-white tracking-wider drop-shadow-lg">Detailing Premium</h3>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          
+          <div class="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 service-glass-box">
+            <div class="flex items-center gap-3 mb-1">
+              <i class="fa-solid fa-hand-sparkles text-red text-xl"></i>
+              <h3 class="font-display font-bold uppercase text-2xl md:text-3xl text-white tracking-wider">Detailing</h3>
             </div>
-            <p class="text-paper text-sm max-w-lg transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 drop-shadow-md font-medium">Limpieza profunda, pulido de corrección y sellado cerámico de alta gama.</p>
+            <p class="text-paper-dim text-xs md:text-sm font-medium leading-relaxed">Limpieza profunda, pulido de corrección y sellado cerámico de alta gama.</p>
           </div>
         </div>
 
@@ -341,16 +361,16 @@
   </section>
 
   <!-- CONFIGURADOR 3D -->
-  <section id="configurador3d" class="py-24 bg-ink border-y border-line relative overflow-hidden">
+  <section id="configurador3d" class="py-20 bg-ink border-y border-line">
     <div class="max-w-7xl mx-auto px-6 text-center">
       <div class="reveal mb-8">
         <span class="eyebrow justify-center">Estudio de Pintura al Horno</span>
-        <h2 class="font-display font-bold uppercase mt-4 text-4xl md:text-6xl">Estudio 3D — Personaliza tu Auto</h2>
-        <p class="text-steel text-sm md:text-base mt-2 max-w-2xl mx-auto">Selecciona el vehículo y prueba nuestros acabados de pintura al horno en tiempo real.</p>
+        <h2 class="font-display font-bold uppercase mt-4 text-3xl md:text-5xl">Estudio 3D — Personaliza tu Auto</h2>
+        <p class="text-steel text-xs md:text-base mt-2 max-w-2xl mx-auto">Selecciona el vehículo y prueba nuestros acabados de pintura al horno en tiempo real con iluminación PBR.</p>
       </div>
 
-      <div class="reveal mb-6 flex flex-wrap justify-center items-center gap-3 border border-line-light p-3 rounded-xl bg-panel max-w-xl mx-auto">
-        <span class="text-xs font-mono text-steel uppercase tracking-wider mr-2">Modelos:</span>
+      <div class="reveal mb-6 flex flex-wrap justify-center items-center gap-3 border border-line-light p-3 rounded-xl bg-panel max-w-xl mx-auto overflow-x-auto">
+        <span class="text-xs font-mono text-steel uppercase tracking-wider mr-2 hidden sm:inline">Modelos:</span>
         <button class="car-select-btn active" onclick="changeVehicle('assets/subaru.glb', this)">
           <i class="fa-solid fa-car"></i> Subaru WRX
         </button>
@@ -362,7 +382,7 @@
         </button>
       </div>
 
-      <div class="reveal reveal-d1 relative max-w-5xl mx-auto rounded-2xl border border-line-light bg-[rgba(10,10,13,0.85)] p-4 md:p-8 shadow-2xl backdrop-blur-xl">
+      <div class="reveal relative max-w-5xl mx-auto rounded-2xl border border-line-light bg-[rgba(10,10,13,0.85)] p-4 md:p-8 shadow-2xl backdrop-blur-xl">
         <model-viewer id="carModel"
                       src="assets/subaru.glb"
                       environment-image="https://modelviewer.dev/shared-assets/environments/aircraft_workshop_01_1k.hdr"
@@ -382,99 +402,151 @@
           </div>
         </model-viewer>
 
+        <!-- Paleta de Colores -->
         <div class="mt-8 pt-6 border-t border-line">
-          <p class="text-xs font-mono text-steel uppercase tracking-widest mb-4">Selecciona el acabado para la pintura exterior:</p>
-          <div class="flex flex-wrap justify-center items-center gap-4">
-            <button class="color-swatch-pro active" onclick="setCarPaint(this, [0.05, 0.15, 0.5, 1.0], false)">
-              <span class="color-pill" style="background:#1E3A8A;"></span>
+          <p class="text-xs font-mono text-steel uppercase tracking-widest mb-4">Selecciona un color de la paleta profesional:</p>
+          <div class="flex flex-wrap justify-center items-center gap-3 overflow-x-auto pb-2">
+            <button class="color-swatch-pro active" onclick="setCarPaint(this, [0.4, 0.42, 0.45, 1.0], false)">
+              <span class="color-pill" style="background:#6B7280;"></span>
+              <span class="text-xs font-mono text-white">Gris Nardo</span>
+            </button>
+            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.02, 0.1, 0.35, 1.0], false)">
+              <span class="color-pill" style="background:#0F172A;"></span>
               <span class="text-xs font-mono text-white">Azul Perlado</span>
             </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.85, 0.05, 0.05, 1.0], false)">
-              <span class="color-pill" style="background:#E63946;"></span>
+            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.65, 0.02, 0.08, 1.0], false)">
+              <span class="color-pill" style="background:#991B1B;"></span>
               <span class="text-xs font-mono text-white">Rojo Candy</span>
             </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.75, 0.77, 0.8, 1.0], false)">
-              <span class="color-pill" style="background:#d1d5db;"></span>
-              <span class="text-xs font-mono text-white">Blanco Mineral</span>
+            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.85, 0.87, 0.9, 1.0], false)">
+              <span class="color-pill" style="background:#E2E8F0;"></span>
+              <span class="text-xs font-mono text-white">Blanco Perla</span>
             </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.01, 0.01, 0.01, 1.0], false)">
-              <span class="color-pill" style="background:#111;"></span>
-              <span class="text-xs font-mono text-white">Negro Espejo</span>
+            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.01, 0.01, 0.02, 1.0], false)">
+              <span class="color-pill" style="background:#09090B;"></span>
+              <span class="text-xs font-mono text-white">Negro Obsidiana</span>
             </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.03, 0.03, 0.03, 1.0], true)">
+            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.02, 0.02, 0.02, 1.0], true)">
               <span class="color-pill" style="background:#18181B; border-style: dashed;"></span>
-              <span class="text-xs font-mono text-white">Negro Mate (Opaco)</span>
+              <span class="text-xs font-mono text-white">Negro Mate</span>
             </button>
           </div>
         </div>
       </div>
-      <p class="text-xs text-steel-dim font-mono mt-6">* Simulación con acabado transparente poliuretano y protección cerámica.</p>
+      <p class="text-xs text-steel-dim font-mono mt-6">* Simulación PBR con barniz poliuretano y protección cerámica 3M, Würth y Roberlo.</p>
     </div>
   </section>
 
-  <!-- PROMOCIONES -->
-  <section id="promociones" class="py-24 bg-[rgba(10,10,12,0.8)] border-y border-line relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <div class="reveal mb-16 text-center max-w-3xl mx-auto">
-        <span class="eyebrow justify-center">Precios claros</span>
-        <h2 class="font-display font-bold uppercase mt-4 text-5xl md:text-6xl">Ofertas especiales</h2>
-        <p class="mt-6 text-paper-dim text-lg">Aprovecha nuestras promociones exclusivas diseñadas para mantener tu vehículo en perfectas condiciones al mejor precio.</p>
+  <!-- PROMOCIONES / TABLA DE PRECIOS -->
+  <section id="promociones" class="py-20 bg-[rgba(10,10,12,0.8)] border-y border-line">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="reveal mb-12 text-center max-w-3xl mx-auto">
+        <span class="eyebrow justify-center">Precios claros y presupuestos</span>
+        <h2 class="font-display font-bold uppercase mt-4 text-4xl md:text-5xl">Ofertas Especiales</h2>
+        <p class="mt-4 text-paper-dim text-base">Aprovecha nuestras promociones exclusivas y cotiza con presupuestos detallados.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="glass-card reveal reveal-d1 rounded-xl p-8 md:p-10">
-          <i class="fa-solid fa-spray-can absolute -right-6 -top-6 text-[12rem] text-red opacity-10 rotate-12"></i>
-          <span class="code-tag mb-4">PROMO · 01</span>
-          <h3 class="font-display font-bold uppercase text-3xl md:text-4xl mb-1 text-white">Pintado Profesional</h3>
-          <p class="text-xs text-steel uppercase tracking-widest mb-6 relative z-10">En Horno · Color Original · A Puertas Cerradas</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        
+        <!-- PROMO 01: Pintado Profesional -->
+        <div class="bg-panel border border-line-light rounded-xl p-6 md:p-8 reveal shadow-xl flex flex-col justify-between">
+          <div>
+            <span class="code-tag mb-4">PROMO · 01</span>
+            <h3 class="font-display font-bold uppercase text-2xl md:text-3xl mb-1 text-white">Pintado Profesional</h3>
+            <p class="text-[11px] text-steel uppercase tracking-widest mb-6">En Horno · Insumos 3M, Würth & Roberlo</p>
 
-          <ul class="space-y-4 relative z-10 font-mono text-sm mb-8">
-            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Hatchback</span><span class="font-bold text-red text-xl">$1.100.000</span></li>
-            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Sedán</span><span class="font-bold text-red text-xl">$1.250.000</span></li>
-            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">SUV</span><span class="font-bold text-red text-xl">$1.350.000</span></li>
-            <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Pick Up</span><span class="font-bold text-red text-xl">$1.550.000</span></li>
-          </ul>
+            <ul class="space-y-3 font-mono text-xs md:text-sm mb-6">
+              <li class="flex justify-between pb-2 border-b border-line items-center"><span class="text-steel uppercase">Hatchback</span><span class="font-bold text-red">$1.100.000</span></li>
+              <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Sedán</span><span class="font-bold text-red">$1.250.000</span></li>
+              <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">SUV</span><span class="font-bold text-red">$1.350.000</span></li>
+              <li class="flex justify-between pb-3 border-b border-line items-center"><span class="text-steel uppercase">Pick Up</span><span class="font-bold text-red">$1.550.000</span></li>
+            </ul>
+          </div>
 
-          <div class="flex flex-col lg:flex-row gap-3 mb-6 relative z-10">
-            <div class="bg-paper text-ink font-bold text-xs py-2 px-4 rounded text-center whitespace-nowrap">2 AÑOS GARANTÍA</div>
-            <div class="bg-red/10 border border-red text-red font-bold text-xs py-2 px-4 rounded text-center whitespace-nowrap">INCLUYE SELLADO CERÁMICO</div>
+          <div class="flex flex-col gap-2 pt-2">
+            <div class="bg-paper text-ink font-bold text-[10px] py-2 px-3 rounded text-center">2 AÑOS GARANTÍA</div>
+            <div class="bg-red/10 border border-red text-red font-bold text-[10px] py-2 px-3 rounded text-center">INCLUYE SELLADO CERÁMICO</div>
           </div>
         </div>
 
-        <div class="glass-card reveal reveal-d2 rounded-xl p-8 md:p-10">
-          <i class="fa-solid fa-car-burst absolute -right-6 -top-6 text-[12rem] text-red opacity-10 rotate-12"></i>
-          <span class="code-tag mb-4">PROMO · 02</span>
-          <h3 class="font-display font-bold uppercase text-3xl md:text-4xl mb-2 text-white">Revisión mecánica</h3>
-          <div class="flex items-baseline gap-4 mb-8 border-b border-line pb-6">
-            <p class="font-mono font-bold text-5xl text-red">$45.000</p>
-            <p class="text-sm font-mono text-steel-dim line-through decoration-red">Normal: $65.000</p>
+        <!-- PROMO 02: Revisión Técnica / Mecánica -->
+        <div class="bg-panel border border-line-light rounded-xl p-6 md:p-8 reveal shadow-xl flex flex-col justify-between">
+          <div>
+            <span class="code-tag mb-4">PROMO · 02</span>
+            <h3 class="font-display font-bold uppercase text-2xl md:text-3xl mb-2 text-white">Revisión Mecánica</h3>
+            <div class="flex items-baseline gap-3 mb-6 border-b border-line pb-4">
+              <p class="font-mono font-bold text-4xl text-red">$45.000</p>
+              <p class="text-xs font-mono text-steel-dim line-through decoration-red">$65.000</p>
+            </div>
+            <p class="font-bold uppercase text-xs tracking-widest mb-4 text-paper">El servicio incluye:</p>
+            <ul class="space-y-3 text-xs md:text-sm">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red"></i><span class="text-paper-dim">Informe técnico detallado</span></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red"></i><span class="text-paper-dim">Presupuesto de reparación exacto</span></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red"></i><span class="text-paper-dim">Escáner computarizado completo</span></li>
+            </ul>
           </div>
-          <p class="font-bold uppercase text-xs tracking-widest mb-5 text-paper">El servicio incluye:</p>
-          <ul class="space-y-4 relative z-10 text-sm">
-            <li class="flex items-center gap-4"><i class="fa-solid fa-check text-red bg-red/10 p-1.5 rounded"></i><span class="text-paper-dim">Informe técnico detallado</span></li>
-            <li class="flex items-center gap-4"><i class="fa-solid fa-check text-red bg-red/10 p-1.5 rounded"></i><span class="text-paper-dim">Presupuesto de reparación exacto</span></li>
-            <li class="flex items-center gap-4"><i class="fa-solid fa-check text-red bg-red/10 p-1.5 rounded"></i><span class="text-paper-dim">Escáner computarizado pre y post reparación</span></li>
-          </ul>
+
+          <a href="#contacto" class="btn btn-ghost w-full mt-6 !text-xs">SOLICITAR REVISIÓN</a>
+        </div>
+
+        <!-- PROMO 03: Inspección y Presupuestos Detallados -->
+        <div class="bg-panel border border-line-light rounded-xl p-6 md:p-8 reveal shadow-xl flex flex-col justify-between border-red/40">
+          <div>
+            <span class="code-tag mb-4 !border-red/50 !text-red">PROMO · 03</span>
+            <h3 class="font-display font-bold uppercase text-2xl md:text-3xl mb-2 text-white">Inspección de Daños</h3>
+            <div class="mb-6 border-b border-line pb-4">
+              <p class="font-mono font-bold text-2xl text-emerald-400">PRECIO VARIABLE</p>
+              <p class="text-[10px] font-mono text-steel uppercase tracking-widest mt-1">*Sujeto a evaluación técnica en taller</p>
+            </div>
+            <p class="font-bold uppercase text-xs tracking-widest mb-4 text-paper">Cotizaciones claras:</p>
+            <ul class="space-y-3 text-xs md:text-sm">
+              <li class="flex items-center gap-3"><i class="fa-solid fa-calculator text-red"></i><span class="text-paper-dim">Presupuesto valor mano de obra</span></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-cubes text-red"></i><span class="text-paper-dim">Presupuesto de repuestos (Original/Alt.)</span></li>
+              <li class="flex items-center gap-3"><i class="fa-solid fa-file-signature text-red"></i><span class="text-paper-dim">Informe técnico completo</span></li>
+            </ul>
+          </div>
+
+          <a href="#contacto" class="btn btn-solid w-full mt-6 !text-xs">EVALUAR MI AUTO</a>
+        </div>
+
+      </div>
+
+      <!-- BANNER DE MEDIOS DE PAGO DESTACADO -->
+      <div class="reveal rounded-xl border border-line-light bg-black/60 p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-red/10 border border-red/30 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-credit-card text-red text-xl"></i>
+          </div>
+          <div>
+            <h4 class="font-bold uppercase text-white text-base">Medios de Pago: ¡Todos los medios de pago!</h4>
+            <p class="text-xs text-steel-dim">Paga cómodamente tu servicio como prefieras con la máxima seguridad.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-6 text-xl text-paper-dim">
+          <span class="flex items-center gap-2 text-xs font-mono bg-panel px-3 py-2 rounded border border-line"><i class="fa-solid fa-money-bill-wave text-emerald-400"></i> Efectivo</span>
+          <span class="flex items-center gap-2 text-xs font-mono bg-panel px-3 py-2 rounded border border-line"><i class="fa-solid fa-building-columns text-sky-400"></i> Transferencia</span>
+          <span class="flex items-center gap-2 text-xs font-mono bg-panel px-3 py-2 rounded border border-line"><i class="fa-solid fa-credit-card text-red"></i> Tarjetas Crédito/Débito (Transbank)</span>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-24 bg-ink border-b border-line relative overflow-hidden">
+  <!-- PREGUNTAS FRECUENTES -->
+  <section id="faq" class="py-20 bg-ink border-b border-line">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
         
-        <div class="w-full h-[400px] lg:h-[550px] rounded-2xl overflow-hidden relative reveal reveal-d1 border border-line-light shadow-2xl">
-          <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=1000&auto=format&fit=crop" alt="Auto Blanco en Taller" class="absolute inset-0 w-full h-full object-cover">
+        <div class="w-full h-[380px] lg:h-[500px] rounded-2xl overflow-hidden relative reveal border border-line-light shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=1000&auto=format&fit=crop" alt="Auto Blanco Innovautos" class="absolute inset-0 w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-80"></div>
         </div>
 
-        <div class="reveal reveal-d2">
-          <span class="eyebrow mb-2">01—05. Preguntas Frecuentes</span>
-          <h2 class="font-display font-bold text-4xl md:text-5xl text-white mt-3 mb-6">Todo lo que <br><span class="text-red">necesitas saber</span></h2>
+        <div class="reveal">
+          <span class="eyebrow mb-2">01—05. Información de Interés</span>
+          <h2 class="font-display font-bold text-3xl md:text-5xl text-white mt-2 mb-6">Preguntas Frecuentes</h2>
           <p class="text-paper-dim text-sm md:text-base leading-relaxed mb-8">
-            Somos especialistas multimarca en Concepción. Conocemos tu vehículo por dentro, usamos herramientas de precisión y te entregamos resultados garantizados.
+            Somos especialistas en Concepción. Conocemos tu vehículo por dentro, usamos herramientas de precisión e insumos certificados (3M, Würth, Roberlo).
           </p>
 
           <div class="space-y-4">
@@ -484,7 +556,7 @@
                 <i class="fa-solid fa-plus text-red bg-red/10 p-2 rounded transition-transform"></i>
               </button>
               <div class="faq-content hidden px-5 pb-5 text-steel-dim text-sm leading-relaxed border-t border-line">
-                Ofrecemos desabolladura y pintura al horno, mantenciones pautadas, diagnósticos avanzados con escáner, mecánica general y detailing premium multimarca.
+                Ofrecemos desabolladura y pintura al horno, mantenciones pautadas, diagnósticos avanzados con escáner, mecánica general, inspección de daños con presupuestos de mano de obra y repuestos, y detailing (sin la palabra premium).
               </div>
             </div>
 
@@ -493,8 +565,9 @@
                 <span class="font-bold text-sm tracking-wider uppercase text-white">¿CÓMO PUEDO PROGRAMAR UNA CITA?</span>
                 <i class="fa-solid fa-plus text-red bg-red/10 p-2 rounded transition-transform"></i>
               </button>
-              <div class="faq-content hidden px-5 pb-5 text-steel-dim text-sm leading-relaxed border-t border-line">
-                Puedes agendar directamente haciendo clic en el botón de WhatsApp o llamando directamente a nuestro taller.
+              <div class="faq-content hidden px-5 pb-5 text-steel-dim text-sm leading-relaxed border-t border-line space-y-3">
+                <p>Puedes agendar directamente haciendo clic en el botón de WhatsApp o llamando directamente a nuestro taller al número <a href="tel:+56977842816" class="text-white font-bold underline hover:text-red">+56 9 7784 2816</a>.</p>
+                <p>También puedes enviarnos un mensaje interno a nuestro Instagram oficial <a href="https://www.instagram.com/innovautosconcepcion" target="_blank" rel="noopener" class="text-red font-bold underline hover:text-white">@innovautosconcepcion</a> para coordinar la evaluación de tu vehículo.</p>
               </div>
             </div>
 
@@ -504,7 +577,7 @@
                 <i class="fa-solid fa-plus text-red bg-red/10 p-2 rounded transition-transform"></i>
               </button>
               <div class="faq-content hidden px-5 pb-5 text-steel-dim text-sm leading-relaxed border-t border-line">
-                Aceptamos efectivo, transferencias bancarias y tarjetas de crédito/débito vía Transbank.
+                Aceptamos <strong>todos los medios de pago</strong>: efectivo, transferencias bancarias y todas las tarjetas de crédito o débito a través de Transbank.
               </div>
             </div>
           </div>
@@ -514,20 +587,19 @@
     </div>
   </section>
 
-  <!-- FORMULARIO DE LEADS -->
-  <section id="contacto" class="py-24 bg-[rgba(10,10,12,0.8)] relative">
+  <!-- FORMULARIO DE CONTACTO DIRECTO -->
+  <section id="contacto" class="py-20 bg-[rgba(10,10,12,0.8)]">
     <div class="max-w-6xl mx-auto px-6">
-      
       <div class="flex flex-col md:flex-row bg-ink border border-line-light rounded-2xl overflow-hidden shadow-2xl reveal">
         <div class="w-full md:w-5/12 h-64 md:h-auto relative">
-          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop" alt="Auto en Movimiento" class="absolute inset-0 w-full h-full object-cover">
+          <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop" alt="Auto Taller" class="absolute inset-0 w-full h-full object-cover">
           <div class="absolute inset-0 bg-gradient-to-r from-transparent to-ink opacity-90 md:opacity-100"></div>
         </div>
 
         <div class="w-full md:w-7/12 p-8 md:p-12 relative z-10">
           <span class="eyebrow mb-2 text-[11px]">TE CONTACTAMOS DE INMEDIATO</span>
-          <h2 class="font-display font-bold text-4xl md:text-5xl text-white mt-2 mb-4 leading-none italic tracking-wide">DÉJANOS TU CELULAR Y <br>TE LLAMAMOS</h2>
-          <p class="text-steel-dim text-sm mb-8">Ingresa tu nombre y número de teléfono a continuación. Nos comunicaremos contigo a la brevedad para coordinar tu servicio.</p>
+          <h2 class="font-display font-bold text-3xl md:text-5xl text-white mt-2 mb-4 leading-none italic">DÉJANOS TU CELULAR Y <br>TE LLAMAMOS</h2>
+          <p class="text-steel-dim text-sm mb-8">Ingresa tu nombre y número de teléfono. Nos comunicaremos contigo a la brevedad para coordinar tu servicio.</p>
 
           <form action="#" method="POST" class="space-y-5">
             <div>
@@ -544,20 +616,19 @@
           </form>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- UBICACIÓN -->
-  <section id="ubicacion" class="py-24 border-t border-line relative">
+  <section id="ubicacion" class="py-20 border-t border-line">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
         <div class="lg:col-span-4 reveal">
           <span class="eyebrow">Visítanos</span>
-          <h2 class="font-display font-bold uppercase mt-4 mb-8 text-5xl md:text-6xl text-white">¿Dónde<br>estamos?</h2>
+          <h2 class="font-display font-bold uppercase mt-4 mb-8 text-4xl md:text-6xl text-white">¿Dónde<br>estamos?</h2>
 
-          <div class="border border-line rounded-xl p-8 bg-panel glass-card">
+          <div class="border border-line rounded-xl p-8 bg-panel">
             <div class="flex items-start gap-4 mb-6">
               <i class="fa-solid fa-location-dot text-red text-xl mt-1"></i>
               <div>
@@ -565,11 +636,18 @@
                 <p class="text-sm text-paper-dim">Ongolmo 716,<br>Concepción, Biobío</p>
               </div>
             </div>
-            <div class="flex items-start gap-4">
+            <div class="flex items-start gap-4 mb-6">
               <i class="fa-regular fa-clock text-red text-xl mt-1"></i>
               <div>
                 <p class="font-bold uppercase tracking-wider text-xs mb-1 text-white">Horario</p>
                 <p class="text-sm text-paper-dim">Lun–Vie: 09:00–18:30<br>Sáb: 09:00–14:00</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <i class="fa-brands fa-instagram text-red text-xl mt-1"></i>
+              <div>
+                <p class="font-bold uppercase tracking-wider text-xs mb-1 text-white">Instagram</p>
+                <a href="https://www.instagram.com/innovautosconcepcion" target="_blank" rel="noopener" class="text-sm text-paper-dim hover:text-red transition-colors">@innovautosconcepcion</a>
               </div>
             </div>
           </div>
@@ -581,7 +659,7 @@
           </div>
         </div>
 
-        <div class="lg:col-span-8 reveal reveal-d2">
+        <div class="lg:col-span-8 reveal">
           <div class="map-wrapper shadow-2xl">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.522964177432!2d-73.0487042!3d-36.8273617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9669b5cfaee313cb%3A0xc6fb698295b9c1d!2sOngolmo%20716%2C%20Concepci%C3%B3n%2C%20B%C3%ADo%20B%C3%ADo!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl"
@@ -596,11 +674,22 @@
   </section>
 </main>
 
-<!-- FOOTER -->
+<!-- FOOTER CON INSTAGRAM -->
 <footer class="bg-ink border-t-4 border-red py-12">
-  <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
-    <div class="font-display font-bold uppercase text-2xl text-white">Innovautos Concepción</div>
-    <p class="text-xs font-mono text-steel-dim">© 2026. Todos los derechos reservados. COD: DES-PIN-MEC-3D</p>
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="text-center md:text-left">
+      <div class="font-display font-bold uppercase text-2xl text-white">Innovautos Concepción</div>
+      <p class="text-xs font-mono text-steel-dim mt-1">© 2026. Todos los derechos reservados.</p>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <a href="https://www.instagram.com/innovautosconcepcion" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-panel border border-line-light flex items-center justify-center text-steel hover:text-white hover:border-red transition-all">
+        <i class="fa-brands fa-instagram text-lg"></i>
+      </a>
+      <a href="https://wa.me/56977842816" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-panel border border-line-light flex items-center justify-center text-steel hover:text-[#25D366] hover:border-[#25D366] transition-all">
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+      </a>
+    </div>
   </div>
 </footer>
 
@@ -616,13 +705,18 @@
     navbar.classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  // Mobile Menu
+  // Mobile Menu Logic
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => {
     const open = hamburger.classList.toggle('open');
     mobileMenu.classList.toggle('open', open);
   });
+
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
 
   // Reveal
   const observer = new IntersectionObserver((entries) => {
@@ -659,8 +753,8 @@
         const matName = mat.name.toLowerCase();
         if (matName.includes('body') || matName.includes('paint') || matName.includes('car_paint') || matName.includes('shell') || matName.includes('carroceria') || matName.includes('subaru') || matName.includes('mercedes')) {
           mat.pbrMetallicRoughness.setBaseColorFactor(rgbaNormalizedArray);
-          mat.pbrMetallicRoughness.setMetallicFactor(isMatte ? 0.1 : 0.8);
-          mat.pbrMetallicRoughness.setRoughnessFactor(isMatte ? 0.7 : 0.05);
+          mat.pbrMetallicRoughness.setMetallicFactor(isMatte ? 0.05 : 0.85);
+          mat.pbrMetallicRoughness.setRoughnessFactor(isMatte ? 0.65 : 0.05);
         }
       });
     }
