@@ -428,27 +428,28 @@
           </div>
         </model-viewer>
 
-        <!-- Paleta de Colores -->
+        <!-- Paleta de Colores Realistas -->
         <div class="mt-8 pt-6 border-t border-line">
           <p class="text-xs font-mono text-steel uppercase tracking-widest mb-4">Selecciona un color de la paleta profesional:</p>
           <div class="flex flex-wrap justify-center items-center gap-3 overflow-x-auto pb-2">
-            <button class="color-swatch-pro active" onclick="setCarPaint(this, [0.4, 0.42, 0.45, 1.0], false)">
+            <button class="color-swatch-pro active" onclick="setCarPaint(this, [0.35, 0.38, 0.42, 1.0], false)">
               <span class="color-pill" style="background:#6B7280;"></span>
               <span class="text-xs font-mono text-white">Gris Nardo</span>
             </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.02, 0.1, 0.35, 1.0], false)">
+            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.01, 0.08, 0.28, 1.0], false)">
               <span class="color-pill" style="background:#0F172A;"></span>
               <span class="text-xs font-mono text-white">Azul Perlado</span>
             </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.65, 0.02, 0.08, 1.0], false)">
-              <span class="color-pill" style="background:#991B1B;"></span>
+            <!-- CORRECCIÓN DE ROJO CANDY: Rojo profunto/sangre sin matiz rosado -->
+            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.45, 0.005, 0.01, 1.0], false)">
+              <span class="color-pill" style="background:#800000;"></span>
               <span class="text-xs font-mono text-white">Rojo Candy</span>
             </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.85, 0.87, 0.9, 1.0], false)">
+            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.82, 0.84, 0.88, 1.0], false)">
               <span class="color-pill" style="background:#E2E8F0;"></span>
               <span class="text-xs font-mono text-white">Blanco Perla</span>
             </button>
-            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.01, 0.01, 0.02, 1.0], false)">
+            <button class="color-swatch-pro" onclick="setCarPaint(this, [0.01, 0.01, 0.01, 1.0], false)">
               <span class="color-pill" style="background:#09090B;"></span>
               <span class="text-xs font-mono text-white">Negro Obsidiana</span>
             </button>
@@ -459,7 +460,7 @@
           </div>
         </div>
       </div>
-      <p class="text-xs text-steel-dim font-mono mt-6">* Simulación PBR con barniz poliuretano y protección cerámica 3M, Würth y Roberlo.</p>
+      <p class="text-xs text-steel-dim font-mono mt-6">* Acabado real de fábrica con barniz poliuretano y protección de color 3M, Würth y Roberlo.</p>
     </div>
   </section>
 
@@ -537,22 +538,24 @@
 
       </div>
 
-      <!-- BANNER DE MEDIOS DE PAGO -->
-      <div class="reveal rounded-xl border border-line-light bg-black/60 p-6 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-xl">
-        <div class="flex items-center gap-4 w-full lg:w-auto">
-          <div class="w-12 h-12 rounded-full bg-red/10 border border-red/30 flex items-center justify-center shrink-0">
-            <i class="fa-solid fa-credit-card text-red text-xl"></i>
+      <!-- BANNER DE MEDIOS DE PAGO MÓVIL FIX -->
+      <div class="reveal rounded-xl border border-line-light bg-black/80 p-5 md:p-6 shadow-xl">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="flex items-center gap-4 w-full md:w-auto">
+            <div class="w-12 h-12 rounded-full bg-red/10 border border-red/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-credit-card text-red text-xl"></i>
+            </div>
+            <div>
+              <h4 class="font-bold uppercase text-white text-sm md:text-base">Medios de Pago: ¡Todos los medios de pago!</h4>
+              <p class="text-xs text-steel-dim">Paga cómodamente tu servicio como prefieras con la máxima seguridad.</p>
+            </div>
           </div>
-          <div>
-            <h4 class="font-bold uppercase text-white text-base">Medios de Pago: ¡Todos los medios de pago!</h4>
-            <p class="text-xs text-steel-dim">Paga cómodamente tu servicio como prefieras con la máxima seguridad.</p>
-          </div>
-        </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full lg:w-auto">
-          <span class="flex items-center justify-center gap-2 text-xs font-mono bg-panel px-3 py-2.5 rounded border border-line text-paper-dim whitespace-nowrap"><i class="fa-solid fa-money-bill-wave text-emerald-400"></i> Efectivo</span>
-          <span class="flex items-center justify-center gap-2 text-xs font-mono bg-panel px-3 py-2.5 rounded border border-line text-paper-dim whitespace-nowrap"><i class="fa-solid fa-building-columns text-sky-400"></i> Transferencia</span>
-          <span class="flex items-center justify-center gap-2 text-xs font-mono bg-panel px-3 py-2.5 rounded border border-line text-paper-dim whitespace-nowrap"><i class="fa-solid fa-credit-card text-red"></i> Tarjetas Crédito/Débito</span>
+          <div class="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
+            <span class="flex items-center justify-center gap-2 text-xs font-mono bg-panel px-3 py-2 rounded border border-line text-paper-dim"><i class="fa-solid fa-money-bill-wave text-emerald-400"></i> Efectivo</span>
+            <span class="flex items-center justify-center gap-2 text-xs font-mono bg-panel px-3 py-2 rounded border border-line text-paper-dim"><i class="fa-solid fa-building-columns text-sky-400"></i> Transferencia</span>
+            <span class="flex items-center justify-center gap-2 text-xs font-mono bg-panel px-3 py-2 rounded border border-line text-paper-dim"><i class="fa-solid fa-credit-card text-red"></i> Tarjetas Crédito/Débito</span>
+          </div>
         </div>
       </div>
 
@@ -573,7 +576,7 @@
           <span class="eyebrow mb-2">01—05. Información de Interés</span>
           <h2 class="font-display font-bold text-3xl md:text-5xl text-white mt-2 mb-6">Preguntas Frecuentes</h2>
           <p class="text-paper-dim text-sm md:text-base leading-relaxed mb-8">
-            Somos especialistas en Concepción. Conocemos tu vehículo por dentro, usamos herramientas de precisión y pinturas certificadas (3M, Würth, Roberlo).
+            Somos especialistas en Concepción. Conocemos tu vehículo por dentro, usamos herramientas de precisión e insumos certificados (3M, Würth, Roberlo).
           </p>
 
           <div class="space-y-4">
@@ -762,7 +765,7 @@
     icon.classList.toggle('fa-minus');
   }
 
-  // 3D MODEL LOGIC
+  // 3D MODEL LOGIC (PINTURA REALISTA SIN EFECTO CROMO)
   const carModel = document.querySelector('#carModel');
 
   function changeVehicle(glbUrl, btn) {
@@ -780,8 +783,9 @@
         const matName = mat.name.toLowerCase();
         if (matName.includes('body') || matName.includes('paint') || matName.includes('car_paint') || matName.includes('shell') || matName.includes('carroceria') || matName.includes('subaru') || matName.includes('mercedes')) {
           mat.pbrMetallicRoughness.setBaseColorFactor(rgbaNormalizedArray);
-          mat.pbrMetallicRoughness.setMetallicFactor(isMatte ? 0.05 : 0.85);
-          mat.pbrMetallicRoughness.setRoughnessFactor(isMatte ? 0.65 : 0.05);
+          // Valores corregidos para simular barniz poliuretano real (no cromo)
+          mat.pbrMetallicRoughness.setMetallicFactor(isMatte ? 0.02 : 0.12);
+          mat.pbrMetallicRoughness.setRoughnessFactor(isMatte ? 0.70 : 0.38);
         }
       });
     }
