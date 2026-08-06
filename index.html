@@ -154,6 +154,56 @@
 
   .map-wrapper { width: 100%; height: 100%; min-height: 400px; position: relative; border-radius: 12px; overflow: hidden; border: 1px solid var(--line-light); }
   .map-wrapper iframe { width: 100% !important; height: 100% !important; min-height: 400px; border: 0; }
+
+  /* Acabado premium y utilidades visuales del sistema */
+  .bg-panel { background: linear-gradient(145deg, rgba(25,25,30,.92), rgba(13,13,16,.96)); }
+  .text-red { color: var(--red); }
+  .text-steel { color: var(--steel); }
+  .text-steel-dim { color: var(--steel-dim); }
+  .text-paper-dim { color: var(--paper-dim); }
+  .text-paper { color: var(--paper); }
+  .text-ink { color: var(--ink); }
+  .border-line { border-color: var(--line); }
+  .border-line-light { border-color: var(--line-light); }
+
+  section { scroll-margin-top: 90px; }
+  .navbar .max-w-7xl { max-width: 1320px; }
+  .navbar .group > div { box-shadow: 0 0 0 4px rgba(230,57,70,.06), 0 10px 24px rgba(0,0,0,.35); }
+  .hero-video-bg { filter: saturate(.78) contrast(1.08) brightness(.72); transform: scale(1.02); }
+  header > .bg-gradient-to-r { background: linear-gradient(90deg, rgba(4,4,6,.97) 0%, rgba(6,6,8,.86) 43%, rgba(6,6,8,.42) 100%); }
+  .hero-stat-item { border-bottom-color: rgba(255,255,255,.24); }
+  .hero-stat-item p:last-child { line-height: 1.5; }
+  .eyebrow { font-size: 11px; font-weight: 600; }
+  .btn { border-radius: 5px; letter-spacing: .12em; }
+  .btn-solid { background: linear-gradient(135deg, #e63946 0%, #b91c2b 100%); box-shadow: 0 10px 28px rgba(230,57,70,.24), inset 0 1px 0 rgba(255,255,255,.18); }
+  .btn-solid:hover { box-shadow: 0 14px 34px rgba(230,57,70,.36), inset 0 1px 0 rgba(255,255,255,.2); }
+  .btn-ghost { background: rgba(12,12,16,.72); border-color: rgba(255,255,255,.2); }
+  .service-glass-box { background: linear-gradient(145deg, rgba(8,8,11,.92), rgba(16,16,20,.78)); border-color: rgba(255,255,255,.18); padding: 18px 20px; }
+  .group > img { filter: saturate(.88) contrast(1.05); }
+  .group:hover > img { filter: saturate(1) contrast(1.08); }
+  #servicios .group:nth-child(1) > img { object-position: center 58%; }
+  #servicios .group:nth-child(2) > img { object-position: center 42%; }
+  #servicios .group:nth-child(3) > img { object-position: center 52%; }
+  #servicios .group:nth-child(4) > img { object-position: center 58%; }
+  #faq img, #contacto img { filter: saturate(.82) contrast(1.06) brightness(.86); }
+  #servicios .group { box-shadow: 0 18px 42px rgba(0,0,0,.28); }
+  #servicios .group::after { content: ''; position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.04); border-radius: inherit; pointer-events: none; }
+  #confianza .bg-panel, #promociones .bg-panel, #contacto > div { box-shadow: 0 18px 50px rgba(0,0,0,.24); }
+  #promociones .bg-panel { transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease; }
+  #promociones .bg-panel:hover { transform: translateY(-5px); border-color: rgba(230,57,70,.42); box-shadow: 0 22px 58px rgba(0,0,0,.36); }
+  .code-tag { display: inline-block; border: 1px solid rgba(255,255,255,.16); color: var(--steel); border-radius: 3px; padding: 4px 8px; font: 600 10px 'JetBrains Mono', monospace; letter-spacing: .12em; }
+  model-viewer#carModel { box-shadow: inset 0 0 80px rgba(0,0,0,.3); }
+  .map-wrapper { box-shadow: 0 20px 50px rgba(0,0,0,.28); }
+  .custom-input { background: rgba(255,255,255,.035); border-color: rgba(255,255,255,.16); }
+  .custom-input::placeholder { color: #737781; }
+  footer { background: linear-gradient(180deg, #09090b, #050506); }
+  @media (max-width: 767px) {
+    .navbar { padding: 14px 0; }
+    header { min-height: 88svh; }
+    .hero-video-bg { object-position: 62% center; }
+    .service-glass-box { padding: 15px 16px; }
+    .service-glass-box h3 { font-size: 1.2rem; }
+  }
 </style>
 </head>
 
@@ -318,7 +368,7 @@
 
         <!-- 3. Mantenciones -->
         <div class="group relative overflow-hidden rounded-2xl min-h-[320px] border border-line-light shadow-xl reveal">
-          <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?q=80&w=800&auto=format&fit=crop" alt="Mantención" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+          <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1000&auto=format&fit=crop" alt="Mantención" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
           <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
           
           <div class="absolute bottom-4 left-4 right-4 service-glass-box">
@@ -492,7 +542,7 @@
 
           <div class="flex flex-col gap-2 pt-2">
             <div class="bg-paper text-ink font-bold text-[10px] py-2 px-3 rounded text-center">2 AÑOS GARANTÍA</div>
-            <div class="bg-red/10 border border-red text-red font-bold text-[10px] py-2 px-3 rounded text-center">INCLUYE SELLADO CERÁMICO</div>
+            <div class="btn btn-solid w-full !text-[10px] !py-3 !px-3">INCLUYE SELLADO CERÁMICO</div>
           </div>
         </div>
 
@@ -513,7 +563,7 @@
             </ul>
           </div>
 
-          <a href="#contacto" class="btn btn-ghost w-full mt-6 !text-xs">SOLICITAR REVISIÓN</a>
+          <a href="#contacto" class="btn btn-solid w-full mt-6 !text-xs">SOLICITAR REVISIÓN</a>
         </div>
 
         <!-- PROMO 03: Inspección y Presupuestos Detallados -->
